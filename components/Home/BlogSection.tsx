@@ -4,9 +4,8 @@ import PostCard from "../ui/PostCard";
 import Link from "next/link";
 
 async function getNewBlogs(): Promise<IBlog[]> {
-  const apiUrl = "http://localhost:3000";
-
   try {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
     const res = await fetch(`${apiUrl}/api/newBlogs`, { cache: "no-store" });
     if (!res.ok) throw new Error("Faild to fetch project");
     const data = await res.json();

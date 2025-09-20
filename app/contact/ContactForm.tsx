@@ -18,7 +18,8 @@ export default function ContactForm() {
     setErrorMessage("");
 
     try {
-      const response = await fetch("http://localhost:3000/api/contact", {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+      const response = await fetch(`${apiUrl}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

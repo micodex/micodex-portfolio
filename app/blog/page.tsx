@@ -14,7 +14,8 @@ export const metadata: Metadata = {
 async function getBlog(tag?: string, search?: string): Promise<IBlog[]> {
   try {
     // api API URL with optional tag and search filters
-    const url = new URL("http://localhost:3000/api/blog");
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+    const url = new URL(`${apiUrl}/api/blog`);
     if (tag && tag !== "all") url.searchParams.append("tag", tag);
     if (search) url.searchParams.append("search", search);
 

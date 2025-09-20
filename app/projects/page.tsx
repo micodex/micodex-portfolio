@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 async function getProjects(): Promise<IProject[]> {
   try {
-    const apiUrl = "http://localhost:3000";
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
     const res = await fetch(`${apiUrl}/api/projects`, { cache: "no-store" });
     if (!res.ok) throw new Error("Failed to fetch projects");
     const data = await res.json();
