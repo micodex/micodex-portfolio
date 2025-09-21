@@ -8,6 +8,7 @@ import SkillSection from "@/components/Home/SkillSection";
 import BlogSection from "@/components/Home/BlogSection";
 import ContactSection from "@/components/Home/ContactSection";
 import BlogSkeleton from "@/components/ui/PostCardSkeleton";
+import PostCardSkeleton from "@/components/ui/PostCardSkeleton";
 
 export default function HomePage() {
   return (

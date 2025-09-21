@@ -6,9 +6,10 @@ export default function ProjectCard({ project }: { project: IProject }) {
   return (
     <article
       data-aos="fade-in" // hydration fail?!
-      className="lg:block flex gap-4 bg-white dark:bg-gray-900 shadow-2xl shadow-slate-200/50 dark:shadow-none hover:shadow-sm transition-shadow duration-100 ring-2 ring-gray-100  dark:ring-gray-800 px-4 py-4 rounded-md overflow-hidden"
+      className="p-4 bg-white dark:bg-gray-900 shadow-2xl shadow-slate-200/50 dark:shadow-none hover:shadow-sm transition-shadow duration-100 ring-2 ring-gray-100  dark:ring-gray-800 rounded-md overflow-hidden"
     >
-      <div className=" relative w-full aspect-4/3 border rounded-sm overflow-hidden dark:opacity-84">
+      {/* card image */}
+      <div className="relative w-full aspect-4/3 rounded-sm overflow-hidden dark:opacity-84">
         <Image
           className="object-cover w-full"
           src={project.src}
@@ -16,29 +17,30 @@ export default function ProjectCard({ project }: { project: IProject }) {
           fill={true}
         ></Image>
       </div>
-      <div className="lg:block flex flex-col">
-        <h3 className="font-bold text-gray-800 dark:text-gray-200 text-lg lg:mt-4 mt-0">
+      {/* card content */}
+      <div className="pt-4">
+        <h3 className="font-bold text-l text-gray-800 dark:text-gray-200">
           {project.title}
         </h3>
-        <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
+        <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
           {project.description}
         </p>
-        <div className="mt-4 space-x-2">
+        <div className="mt-4 flex gap-3 flex-wrap">
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="inline-flex items-center rounded-md bg-gray-50 dark:bg-gray-600 px-2 py-1 text-xs font-medium text-gray-600 dark:text-gray-200 ring-1 ring-gray-500/10 ring-inset"
+              className="px-2 py-1 rounded-md text-xs font-light bg-gray-50 dark:bg-gray-600 ring-2 ring-inset ring-gray-200 dark:ring-gray-500 text-gray-600 dark:text-gray-200 "
             >
               {tag}
             </span>
           ))}
         </div>
-        <div className="flex justify-between items-center lg:mt-6 mt-auto ">
+        <div className="mt-4 flex justify-between items-center">
           <a
             target="_blank"
             rel="noopener noreferrer" // for security
             href={project.githubUrl}
-            className="btn-link flex items-center space-x-2 shadow-[0_0_50px_0px] shadow-sky-200 dark:shadow-none"
+            className="btn-link rounded-full flex items-center space-x-2 shadow-[0_0_50px_0px] shadow-sky-200 dark:shadow-none"
           >
             <FaGithub aria-hidden="true" />
             <span className="text-sm">Source</span>

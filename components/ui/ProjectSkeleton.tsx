@@ -5,7 +5,7 @@ const CardSkeleton = () => (
     <div className="relative w-full aspect-4/3 bg-gray-300 dark:bg-gray-700 rounded-sm animate-pulse"></div>
     <div className="w-full">
       {/* Title Placeholder */}
-      <div className="h-6 w-3/4 bg-gray-300 dark:bg-gray-700 rounded mt-4 animate-pulse"></div>
+      <div className="h-6 w-1/2 bg-gray-300 dark:bg-gray-700 rounded mt-4 animate-pulse"></div>
       {/* Description Placeholder */}
       <div className="h-4 w-full bg-gray-300 dark:bg-gray-700 rounded mt-2 animate-pulse"></div>
       <div className="h-4 w-5/6 bg-gray-300 dark:bg-gray-700 rounded mt-1 animate-pulse"></div>
@@ -16,7 +16,7 @@ const CardSkeleton = () => (
       </div>
       {/* Buttons Placeholder */}
       <div className="flex justify-between items-center mt-6">
-        <div className="h-10 w-24 bg-gray-300 dark:bg-gray-700 rounded-md animate-pulse"></div>
+        <div className="h-10 w-24 bg-gray-300 dark:bg-gray-700 rounded-full animate-pulse"></div>
         <div className="h-4 w-28 bg-gray-300 dark:bg-gray-700 rounded animate-pulse"></div>
       </div>
     </div>
@@ -42,7 +42,7 @@ export default function ProjectSkeleton() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Render 3 skeleton cards for the placeholder */}
           <CardSkeleton />
           <CardSkeleton />

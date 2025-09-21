@@ -66,21 +66,6 @@ export default function SkillSection() {
           ))}
         </div>
       </div>
-
-      {/* Component-scoped style */}
-      <style jsx>{`
-        @keyframes fadeIn {
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fadeIn {
-          animation: fadeIn 0.3s ease-out forwards;
-          opacity: 0;
-          transform: translateY(20px);
-        }
-      `}</style>
     </section>
   );
 }

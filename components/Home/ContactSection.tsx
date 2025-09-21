@@ -1,4 +1,4 @@
-import Button from "../ui/Button";
+import Link from "next/link";
 
 export default function ContactSection() {
   return (
@@ -9,22 +9,25 @@ export default function ContactSection() {
       <div className="section-container">
         <div
           data-aos="fade-in"
-          className="py-20 px-10 rounded-lg bg-linear-to-r/oklab from-indigo-300 to-teal-300"
+          className="animated-background py-20 px-4 rounded-lg bg-linear-to-r/oklab from-indigo-300 to-teal-300"
         >
-          <div className="text-center space-y-3">
+          <div className="text-center">
+            <span className="block text-4xl">🎉</span>
             <h2
               id="contact-heading"
-              className="
-              font-bold text-3xl text-gray-900"
+              className="mt-4 font-bold text-2xl sm:text-3xl text-gray-900"
             >
-              I am ready to collaborate 🎉
+              I am ready to collaborate
             </h2>
-            <p className="text-gray-800">
+
+            <p className="mt-1 text-gray-800">
               If you have a project that needs development, let&apos;s talk
               about it.
             </p>
-            <div className="flex justify-center mt-2">
-              <Button href="./contact">Contact me</Button>
+            <div className="mt-6 block">
+              <Link className="btn-link" href="./contact">
+                Contact me
+              </Link>
             </div>
           </div>
         </div>

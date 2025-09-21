@@ -17,6 +17,9 @@ async function getNewBlogs(): Promise<IBlog[]> {
 }
 
 export default async function BlogSection() {
+  // fake delay for tesing
+  // await new Promise((resolve) => setTimeout(resolve, 8000));
+
   const newBlogs = await getNewBlogs();
 
   return (

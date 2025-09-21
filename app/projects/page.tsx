@@ -28,7 +28,7 @@ export default async function projectsPage() {
 
   return (
     <div className="bg-gray-50 dark:bg-gray-950">
-      <header className="mb-10">
+      <header className="mb-10 overflow-hidden">
         <div className="relative section-container pt-40 pb-20">
           {/* blur background */}
           <div

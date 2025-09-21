@@ -16,6 +16,9 @@ async function getProjects(): Promise<IProject[]> {
 }
 
 export default async function ProjectSection() {
+  // fake delay for tesing
+  // await new Promise((resolve) => setTimeout(resolve, 8000));
+
   const projects = await getProjects();
 
   return (
@@ -52,8 +55,7 @@ export default async function ProjectSection() {
             No projects available at the moment.
           </p>
         ) : (
-          // <AosProvider>
-          <ul className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {/* Project cards */}
             {projects.map((project) => (
               <li key={String(project._id)}>
@@ -61,7 +63,6 @@ export default async function ProjectSection() {
               </li>
             ))}
           </ul>
-          // </AosProvider>
         )}
       </div>
     </section>

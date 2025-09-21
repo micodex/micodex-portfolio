@@ -7,29 +7,29 @@ function PostSkeleton() {
       className="p-4 flex gap-4 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-lg shadow-gray-100 dark:shadow-none"
     >
       {/* Image Skeleton */}
-      <div className="flex-none w-44 h-44 rounded-md bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+      <div className="flex-none w-20 sm:w-44 rounded-md bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
 
       {/* Content Skeleton */}
-      <div className="flex flex-col space-y-2 flex-grow">
+      <div className="flex flex-col space-y-4 flex-grow">
         {/* Title Skeleton */}
         <div className="h-10 w-4/5 mb-4 rounded bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
 
         {/* Description Skeleton */}
-        <div className="space-y-2 mb-4">
+        <div className="space-y-1">
           <div className="h-3 w-full rounded bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
           <div className="h-3 w-5/6 rounded bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
           <div className="h-3 w-5/8 rounded bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
         </div>
 
         {/* Tags Skeleton */}
-        <div className="inline-flex space-x-2">
-          <div className="h-6 w-14 rounded-md bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
-          <div className="h-6 w-20 rounded-md bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
-          <div className="h-6 w-20 rounded-md bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+        <div className="flex flex-wrap gap-2">
+          <div className="h-4 w-10 rounded-md bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+          <div className="h-4 w-20 rounded-md bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+          <div className="h-4 w-10 rounded-md bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
         </div>
 
         {/* Author/Date Skeleton (at the bottom) */}
-        <div className="mt-auto h-4 w-2/3 rounded bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+        <div className="h-4 w-2/3 rounded bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
       </div>
     </div>
   );
