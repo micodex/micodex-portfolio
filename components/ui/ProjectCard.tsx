@@ -1,6 +1,7 @@
-import { IProject } from "@/models/project";
 import Image from "next/image";
+import { IProject } from "@/models/project";
 import { FaGithub } from "react-icons/fa";
+import Tag from "@/components/ui/Tag";
 
 export default function ProjectCard({ project }: { project: IProject }) {
   return (
@@ -27,12 +28,7 @@ export default function ProjectCard({ project }: { project: IProject }) {
         </p>
         <div className="mt-4 flex gap-3 flex-wrap">
           {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-2 py-1 rounded-md text-xs font-light bg-gray-50 dark:bg-gray-600 ring-2 ring-inset ring-gray-200 dark:ring-gray-500 text-gray-600 dark:text-gray-200 "
-            >
-              {tag}
-            </span>
+            <Tag key={tag} tag={tag} />
           ))}
         </div>
         <div className="mt-4 flex justify-between items-center">

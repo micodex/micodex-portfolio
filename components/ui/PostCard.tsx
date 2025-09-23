@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { IBlog } from "@/models/blog";
+import Tag from "@/components/ui/Tag";
 
 export default function PostCard({ blog }: { blog: IBlog }) {
   return (
@@ -26,12 +27,7 @@ export default function PostCard({ blog }: { blog: IBlog }) {
         </p>
         <div className="flex gap-2 flex-wrap">
           {blog.tags.map((tag) => (
-            <span
-              className="px-2 py-1 text-xs font-light rounded-md bg-sky-50 dark:bg-gray-500 text-sky-600 dark:text-gray-200 ring-2 ring-inset ring-sky-500/10 dark:ring-gray-300/40"
-              key={tag}
-            >
-              {tag}
-            </span>
+            <Tag key={tag} tag={tag} color="sky" />
           ))}
         </div>
         <span className="text-xs mt-auto text-gray-500">
