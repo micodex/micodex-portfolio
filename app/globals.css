@@ -152,7 +152,23 @@
       }
 
       50% {
-            background-position: 100% 50%;
+        background-position: 100% 50%;
       }
+    }
+
+    @keyframes menu-fadein {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .mobile-menu-fadein {
+      -webkit-animation: menu-fadein .3s ease 1;
+      -moz-animation: menu-fadein .3s ease 1;
+      animation: menu-fadein .3s ease 1;
     }
 }
