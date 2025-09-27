@@ -5,7 +5,10 @@ import ProjectCard from "../ui/ProjectCard";
 async function getProjects(): Promise<IProject[]> {
   try {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
-    const res = await fetch(`${apiUrl}/api/projects`, { cache: "no-store" });
+    const res = await fetch(`${apiUrl}/api/projects`, {
+      next: { revalidate: 60 },
+    }); // cach the results and refresh data every 60 seconds (ISR)
+
     if (!res.ok) throw new Error("Failed to fetch projects");
     const data = await res.json();
     return data.data;

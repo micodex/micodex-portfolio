@@ -6,7 +6,10 @@ import Link from "next/link";
 async function getNewBlogs(): Promise<IBlog[]> {
   try {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
-    const res = await fetch(`${apiUrl}/api/newBlogs`, { cache: "no-store" });
+    const res = await fetch(`${apiUrl}/api/newBlogs`, {
+      next: { revalidate: 60 },
+    }); // cach the results and refresh data every 60 seconds (ISR)
+
     if (!res.ok) throw new Error("Faild to fetch project");
     const data = await res.json();
     return data.data;

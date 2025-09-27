@@ -19,7 +19,10 @@ async function getBlog(tag?: string, search?: string): Promise<IBlog[]> {
     if (tag && tag !== "all") url.searchParams.append("tag", tag);
     if (search) url.searchParams.append("search", search);
 
-    const res = await fetch(url.toString(), { cache: "no-store" }); // Disable cache for dynamic filtering
+    const res = await fetch(url.toString(), {
+      next: { revalidate: 60 },
+    }); // use ISR for caching posts
+
     if (!res.ok) throw new Error("Failed to fetch blog posts");
     const data = await res.json();
 
