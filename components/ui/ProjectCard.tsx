@@ -36,7 +36,7 @@ export default function ProjectCard({ project }: { project: IProject }) {
             target="_blank"
             rel="noopener noreferrer" // for security
             href={project.githubUrl}
-            className="btn-link rounded-full flex items-center space-x-2 shadow-[0_0_50px_0px] shadow-sky-200 dark:shadow-none"
+            className="btn-card"
           >
             <FaGithub aria-hidden="true" />
             <span className="text-sm">Source</span>

@@ -132,8 +132,16 @@
 } 
 
 @layer components {
-  .btn-link {
-    @apply py-2 px-4 bg-gradient-to-br rounded-lg from-sky-600 to-sky-400 hover:to-sky-400 text-white dark:from-sky-950 dark:to-sky-900 dark:hover:to-sky-800 transition cursor-pointer active:scale-95 duration-100
+  .btn-card {
+    @apply py-2 px-4 bg-gradient-to-r from-sky-500 to-sky-400 hover:to-sky-400 text-white dark:from-sky-950 dark:to-sky-900 dark:hover:to-sky-800 transition cursor-pointer active:scale-95 duration-100  rounded-full flex items-center space-x-2 shadow-[0_0_50px_0px] shadow-sky-200 dark:shadow-none
+  }
+
+  .btn-primary {
+    @apply text-white bg-[#1da1f2] hover:bg-[#1da1f2]/90 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 me-2
+  }
+
+  .btn-dark {
+    @apply text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 me-2
   }
 
   .animated-background {

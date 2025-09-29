@@ -3,7 +3,7 @@ import { FaGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { FaCodepen } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-import { CiMail } from "react-icons/ci";
+import { IoMailOutline } from "react-icons/io5";
 import { CiLocationOn } from "react-icons/ci";
 
 const Footer = () => {
@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="section-container">
         <div className="grid gap-10 grid-cols-1 lg:grid-cols-4 md:grid-cols-2">
           <div className="space-y-4 px-4">
-            <div className="flex items-center space-x-2 text-xl ">
+            <div className="flex items-center space-x-2 text-xl">
               <RiGeminiLine className="text-sky-400" />
               <h3 className="font-bold bg-gradient-to-r from-sky-600 to-violet-400 bg-clip-text text-transparent">
                 micodex
@@ -65,14 +65,6 @@ const Footer = () => {
                   href="#"
                   className="footer-link text-gray-400 hover:text-sky-400"
                 >
-                  Skills
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="footer-link text-gray-400 hover:text-sky-400"
-                >
                   Blogs
                 </a>
               </li>
@@ -111,14 +103,6 @@ const Footer = () => {
                   href="#"
                   className="footer-link text-gray-400 hover:text-sky-400"
                 >
-                  Mobile Apps
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="footer-link text-gray-400 hover:text-sky-400"
-                >
                   Consulting
                 </a>
               </li>
@@ -135,10 +119,12 @@ const Footer = () => {
 
           <div className="space-y-4 px-4">
             <h3 className="text-xl font-bold text-white"> Contact 🤝</h3>
-            <div className="pace-y-2">
+            <div className="space-y-2">
               <div className="flex items-center space-x-3">
-                <CiMail className="text-xl text-gray-200" />
-                <span className="text-gray-400">hello@devportfolio.com</span>
+                <IoMailOutline className="text-xl text-gray-200" />
+                <span className="text-sm text-gray-400">
+                  hello@devportfolio.com
+                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <CiLocationOn className="text-xl text-gray-200" />
@@ -153,7 +139,7 @@ const Footer = () => {
             <span className="block">
               &copy; 2025 micodex. All rights reserved.
             </span>
-            <span className="block mt-2">Pixels & Logic by Milad ✨</span>
+            <span className="block mt-2">Pixels & Logic by Milad</span>
           </div>
 
           <div className="flex space-x-6">

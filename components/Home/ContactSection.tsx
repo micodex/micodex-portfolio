@@ -25,7 +25,7 @@ export default function ContactSection() {
               about it.
             </p>
             <div className="mt-6 block">
-              <Link className="btn-link" href="./contact">
+              <Link className="btn-primary" href="./contact">
                 Contact me
               </Link>
             </div>
