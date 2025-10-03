@@ -1,8 +1,8 @@
 const HeroCode = () => {
   return (
-    <div aria-hidden="true" className="relative hidden lg:block">
-      <div className="rounded-2xl p-6 w-full bg-gradient-to-b from-sky-800 to-gray-800 dark:from-neutral-900 dark:to-gray-900">
-        <div className="flex space-x-2 mb-4">
+    <div dir="ltr" aria-hidden="true" className="relative hidden lg:block">
+      <div className="rounded-2xl p-6 w-full bg-gradient-to-b from-sky-800 to-gray-700 dark:from-neutral-900 dark:to-gray-900">
+        <div className="flex gap-2 mb-4">
           <div className="w-3 h-3 rounded-full bg-red-500"></div>
           <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
           <div className="w-3 h-3 rounded-full bg-green-500"></div>

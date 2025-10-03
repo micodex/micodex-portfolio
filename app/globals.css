@@ -1,5 +1,14 @@
 @import "tailwindcss";
-@import "tw-animate-css";
+/* @import "tw-animate-css"; */
+
+/* fonts */
+.vazir-font {
+  font-family: var(--font-vazirmatn), sans-serif;
+}
+
+.poppins-font {
+  font-family: var(--font-poppins), sans-serif;
+}
 
 @custom-variant dark (&:is(.dark *));
 
@@ -119,6 +128,7 @@
 }
 
 @layer base {
+  
   * {
     @apply border-border outline-ring/50;
   }

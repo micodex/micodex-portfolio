@@ -61,10 +61,10 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 
           <div className=" text-center space-y-3">
             <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100">
-              Latest Blog Posts
+              جدید‌ترین پست‌ها
             </h1>
             <p className="opacity-60">
-              latest blog posts about Technology and programming
+              جدید‌ترین مقالات در مورد دنیای هوش‌مصنوعی و برنامه‌نویسی
             </p>
           </div>
           {/* dotted background */}
@@ -77,6 +77,9 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
       </header>
 
       <div className="section-container">
+        <label className="block ms-4 mb-2 text-gray-600 dark:text-gray-400">
+          فیلتر پست‌ها
+        </label>
         {/* tag filter buttons */}
         <Suspense fallback={<div>Loading filters...</div>}>
           <FilterControls allTags={allTags} />

@@ -14,13 +14,13 @@ const Footer = () => {
           <div className="space-y-4 px-4">
             <div className="flex items-center space-x-2 text-xl">
               <RiGeminiLine className="text-sky-400" />
-              <h3 className="font-bold bg-gradient-to-r from-sky-600 to-violet-400 bg-clip-text text-transparent">
+              <h3 className="font-bold bg-gradient-to-r from-sky-600 to-violet-400 bg-clip-text text-transparent poppins-font">
                 micodex
               </h3>
             </div>
             <p className="text-gray-400">
-              A passionate developer creating beautiful, functional, and
-              user-friendly digital experiences.
+              یک توسعه‌دهنده‌ی پرشور که تجربیات دیجیتالی زیبا، کاربردی و
+              کاربرپسند خلق می‌کنه
             </p>
             <div className="flex space-x-4 text-xl *:hover:text-sky-500">
               <a target="_blank" href="https://github.com/micodex">
@@ -42,14 +42,14 @@ const Footer = () => {
           </div>
 
           <div className="space-y-4 px-4">
-            <h3 className="text-xl font-bold text-gray-100">Pages 📄</h3>
+            <h3 className="text-xl font-bold text-gray-100">صفحه‌ها 📄</h3>
             <ul className="space-y-2">
               <li>
                 <a
                   href="#"
                   className="footer-link text-gray-400 hover:text-sky-400"
                 >
-                  Home
+                  خانه
                 </a>
               </li>
               <li>
@@ -57,7 +57,7 @@ const Footer = () => {
                   href="#"
                   className="footer-link text-gray-400 hover:text-sky-400"
                 >
-                  Project
+                  پروژه‌ها
                 </a>
               </li>
               <li>
@@ -65,7 +65,7 @@ const Footer = () => {
                   href="#"
                   className="footer-link text-gray-400 hover:text-sky-400"
                 >
-                  Blogs
+                  بلاگ
                 </a>
               </li>
               <li>
@@ -73,21 +73,21 @@ const Footer = () => {
                   href="#"
                   className="footer-link text-gray-400 hover:text-sky-400"
                 >
-                  Contact
+                  تماس
                 </a>
               </li>
             </ul>
           </div>
 
           <div className="space-y-4 px-4">
-            <h3 className="text-xl font-bold text-white">Services ⭐</h3>
+            <h3 className="text-xl font-bold text-white">خدمات ⭐</h3>
             <ul className="space-y-2">
               <li>
                 <a
                   href="#"
                   className="footer-link text-gray-400 hover:text-sky-400"
                 >
-                  Web Development
+                  توسعه وب
                 </a>
               </li>
               <li>
@@ -95,7 +95,7 @@ const Footer = () => {
                   href="#"
                   className="footer-link text-gray-400 hover:text-sky-400"
                 >
-                  UI/UX Design
+                  طراحی رابط کاربری
                 </a>
               </li>
               <li>
@@ -103,7 +103,7 @@ const Footer = () => {
                   href="#"
                   className="footer-link text-gray-400 hover:text-sky-400"
                 >
-                  Consulting
+                  وب اپلیکیشن
                 </a>
               </li>
               <li>
@@ -111,14 +111,14 @@ const Footer = () => {
                   href="#"
                   className="footer-link text-gray-400 hover:text-sky-400"
                 >
-                  DevOps
+                  مشاوره
                 </a>
               </li>
             </ul>
           </div>
 
           <div className="space-y-4 px-4">
-            <h3 className="text-xl font-bold text-white"> Contact 🤝</h3>
+            <h3 className="text-xl font-bold text-white"> تماس 🤝</h3>
             <div className="space-y-2">
               <div className="flex items-center space-x-3">
                 <IoMailOutline className="text-xl text-gray-200" />
@@ -128,13 +128,16 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <CiLocationOn className="text-xl text-gray-200" />
-                <span className="text-gray-400">Iran, Esfahan</span>
+                <span className="text-gray-400">ایران، اصفهان</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="px-4 border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between">
+        <div
+          dir="ltr"
+          className="px-4 border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between poppins-font"
+        >
           <div className="text-gray-500 text-sm mb-4 md:mb-0">
             <span className="block">
               &copy; 2025 micodex. All rights reserved.

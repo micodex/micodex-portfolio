@@ -13,7 +13,7 @@ export default function PostCard({ blog }: { blog: IBlog }) {
         <Image
           src={blog.src}
           fill={true}
-          alt={`Cover image for blog post: ${blog.title}`}
+          alt={`تصویر کاور برای پست: ${blog.title}`}
           className="object-cover"
         />
       </div>
@@ -22,10 +22,10 @@ export default function PostCard({ blog }: { blog: IBlog }) {
         <h3 className="font-bold text-md  text-gray-800 dark:text-gray-200 hover:text-sky-500 dark:hover:text-sky-400 hover:cursor-pointer transition-colors">
           <a href={`/blog/${blog.id}`}>{blog.title}</a>
         </h3>
-        <p className=" text-gray-600 dark:text-gray-400 text-xs sm:text-sm">
+        <p className="line-clamp-2 text-gray-600 dark:text-gray-400 text-xs sm:text-sm">
           {blog.description}
         </p>
-        <div className="flex gap-2 flex-wrap">
+        <div className="flex gap-2 flex-wrap poppins-font">
           {blog.tags.map((tag) => (
             <Tag key={tag} tag={tag} color="sky" />
           ))}

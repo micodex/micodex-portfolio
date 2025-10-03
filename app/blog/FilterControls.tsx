@@ -1,5 +1,6 @@
 "use client";
 
+import Tag from "@/components/ui/Tag";
 import { useSearchParams, useRouter } from "next/navigation";
 // Component to handle tag and search form (client-side for interactivity)
 export default function FilterControls({ allTags }: { allTags: string[] }) {
@@ -30,26 +31,20 @@ export default function FilterControls({ allTags }: { allTags: string[] }) {
   return (
     <nav
       aria-label="Blog Post Filters"
-      className="lg:flex justify-between px-4 py-4 border rounded-xl"
+      className="lg:flex justify-between p-4 border rounded-xl"
     >
-      <div className="content-center space-x-4 mb-4 lg:mb-0">
-        {allTags.map((tag, index) => (
+      <div className="content-center flex gap-3 mb-4 lg:mb-0">
+        {allTags.map((tag) => (
           <button
-            key={index}
+            key={tag}
             aria-pressed={currentTag === tag}
             onClick={() => handleTagClick(tag)}
-            className={`px-2 py-1 rounded-md text-xs font-light bg-white dark:bg-gray-800
-              dark:text-gray-300 text-gray-600 ring-2 ring-gray-500/10 cursor-pointer
-              hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors`}
-            style={{
-              background: currentTag === tag ? "#0EA5E9" : "",
-              color: currentTag === tag ? "white" : "",
-            }}
           >
-            #{tag}
+            <Tag tag={tag} color={currentTag === tag ? "sky" : ""} />
           </button>
         ))}
       </div>
+      {/* search input */}
       <form onSubmit={handleSearch}>
         <input
           className="px-4 py-2 w-full lg:w-md outline-none bg-gray-100 border-2 border-gray-200 dark:border-gray-600 focus:border-gray-400 dark:focus:border-gray-400 dark:bg-gray-800 rounded-xl"
@@ -57,7 +52,7 @@ export default function FilterControls({ allTags }: { allTags: string[] }) {
           name="search"
           aria-label="search blog posts"
           id="search"
-          placeholder="search..."
+          placeholder="جستجو..."
           defaultValue={currentSearch}
         />
       </form>

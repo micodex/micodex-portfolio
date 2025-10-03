@@ -22,14 +22,14 @@ const Navbar = () => {
 
   const pathname = usePathname(); // get current pathname
   const links = [
-    { label: "Home", href: "/" },
-    { label: "Projects", href: "/projects" },
-    { label: "Weblog", href: "/blog" },
-    { label: "Contact", href: "/contact" },
+    { label: "خانه", href: "/" },
+    { label: "پروژه‌ها", href: "/projects" },
+    { label: "وبلاگ", href: "/blog" },
+    { label: "تماس", href: "/contact" },
   ];
 
   return (
-    <nav className="fixed z-2 top-4 left-0 right-0">
+    <nav dir="ltr" className="fixed z-2 top-4 left-0 right-0">
       <div className="section-container">
         <div
           className="
@@ -39,7 +39,10 @@ const Navbar = () => {
            "
         >
           {/* logo */}
-          <Link className="group flex-1 flex items-center space-x-2" href="/">
+          <Link
+            className="group flex-1 flex items-center gap-2 poppins-font"
+            href="/"
+          >
             <RiGeminiLine
               className="text-sky-500 group-hover:text-violet-400 transition-colors"
               size={22}
@@ -49,7 +52,10 @@ const Navbar = () => {
             </span>
           </Link>
           {/* navigation links */}
-          <ul className="flex-1 hidden md:flex justify-center space-x-6">
+          <ul
+            dir="rtl"
+            className="flex-1 hidden md:flex justify-center space-x-8"
+          >
             {links.map(({ label, href }) => (
               <li key={label}>
                 <Link
@@ -64,8 +70,8 @@ const Navbar = () => {
             ))}
           </ul>
 
-          {/* navigation links */}
-          <div className="flex-1 flex justify-end space-x-4">
+          {/* navigation buttons */}
+          <div className="flex-1 flex justify-end gap-3">
             <button
               onClick={toggleTheme}
               className="cursor-pointer hover:text-sky-500 transition-colors"

@@ -9,7 +9,7 @@ export default function HeroSection() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative bg-gradient-to-br from-gray-50 to-indigo-50 dark:from-gray-950 dark:to-gray-800"
+      className="relative bg-gradient-to-br from-sky-100 to-indigo-100 dark:from-black dark:via-gray-950 dark:to-black"
     >
       {/* grid background */}
 
@@ -22,22 +22,22 @@ export default function HeroSection() {
 
         <div className="lg:flex gap-10 pb-20 pt-40">
           <div className="flex flex-col">
-            <div className="z-1 p-6 rounded-xl bg-gradient-to-br from-sky-50 to-sky-100 dark:from-gray-950 dark:to-gray-900 ring-2 dark:ring-gray-900 ring-sky-200">
+            <div className="z-1 px-6 py-12 rounded-xl bg-gradient-to-br from-sky-50 to-sky-100 dark:from-gray-950 dark:to-gray-900 ring-2 dark:ring-gray-900 ring-sky-200">
               <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-200 ">
-                Hello <span aria-hidden="true">👋</span> my name is Milad
+                سلام <span aria-hidden="true">👋</span> من میلاد هستم
               </h1>
-              <h2 className="mt-1 text-2xl font-normal bg-gradient-to-r from-sky-600 to-rose-400 bg-clip-text text-transparent">
-                I am a Full-stack Developer
+              <h2 className="mt-2 text-2xl font-normal bg-gradient-to-r from-sky-600 to-violet-400 bg-clip-text text-transparent">
+                یک توسعه دهنده فول-استک
               </h2>
               <p className="mt-4 text-md text-gray-700 dark:text-gray-400 max-w-150 ">
-                I&apos;m a full-stack developer who thrives on bringing ideas to
-                life, from the initial spark to a polished, user-friendly
-                experience. With a keen eye for both elegant design and robust
-                functionality, I build seamless web applications that deliver
-                real value.
+                من یک برنامه‌نویس فول استک هستم که عاشق تبدیل ایده‌ها به
+                واقعیتم؛ از شروع کار تا ساختن یک تجربه کاربری بی‌نقص. چون هم
+                برای طراحی زیبا و هم برای عملکرد قوی اهمیت قائلم و اپلیکیشن‌های
+                وبی می‌سازم که واقعاً تأثیرگذارند.
               </p>
               <div className="flex gap-4 mt-6">
                 <a
+                  dir="ltr"
                   href="https://github.com/micodex"
                   target="_blank"
                   rel="noopener noreferrer" // for security
@@ -48,8 +48,8 @@ export default function HeroSection() {
                   cursor-pointer active:scale-96 duration-100 ring-sky-300 dark:ring-gray-700
                   "
                 >
-                  <FaGithub size={24} className="mr-2" aria-label="GitHub" />
-                  <span>View Github ↗</span>
+                  <FaGithub size={24} className="ms-2" aria-label="GitHub" />
+                  <span>مشاهده گیت‌هاب ↗</span>
                 </a>
               </div>
             </div>

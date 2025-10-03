@@ -30,11 +30,11 @@ export default function ContactPage() {
 
           <div className="text-center space-y-3">
             <h1 className="font-bold text-4xl text-gray-800 dark:text-gray-100">
-              Get In Touch
+              تماس با من
             </h1>
             <p className="max-w-2xl opacity-60 mx-auto">
-              Have a project in mind or want to collaborate? Feel free to reach
-              out. I&apos;m always open to discussing new opportunities.
+              اگه پروژه‌ای در ذهن دارید یا می‌خواهید همکاری کنید، می‌تونید با من
+              تماس بگیرید
             </p>
           </div>
         </div>

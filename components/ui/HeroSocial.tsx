@@ -5,7 +5,7 @@ import { FaInstagram } from "react-icons/fa";
 
 const HeroSocial = () => {
   return (
-    <ul className="inline-flex space-x-4 p-1 rounded-full bg-gradient-to-r from-sky-100 to-indigo-50  dark:from-gray-900 dark:to-gray-800 ring-4 ring-sky-100 dark:ring-gray-800">
+    <ul className="inline-flex space-x-4 p-1 rounded-full bg-gradient-to-r from-sky-200 to-indigo-200  dark:from-gray-900 dark:to-gray-800 ring-4 ring-indigo-200 dark:ring-gray-800">
       <li className="flex text-3xl justify-center items-center w-14 h-14 rounded-full transition duration-100 dark:hover:bg-gray-700 cursor-pointer hover:text-sky-400 dark:text-gray-300">
         <a
           href="https://github.com/micodex"

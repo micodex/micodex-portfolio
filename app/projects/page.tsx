@@ -1,4 +1,5 @@
 import ProjectCard from "@/components/ui/ProjectCard";
+import Tag from "@/components/ui/Tag";
 import { IProject } from "@/models/project";
 
 // Metadata
@@ -45,9 +46,11 @@ export default async function projectsPage() {
 
           <div className=" text-center space-y-3">
             <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100">
-              All Projects
+              همه پروژه‌ها
             </h1>
-            <p className="opacity-60">A showcase of my best projects</p>
+            <p className="opacity-60">
+              یه لیست از همه پروژه‌هایی که انجام دادم
+            </p>
           </div>
         </div>
 
@@ -60,25 +63,21 @@ export default async function projectsPage() {
       </header>
 
       <nav className="section-container" aria-label="Blog Post Filters">
-        <div className=" lg:flex justify-between px-4 py-4 border rounded-xl">
-          <div className="content-center space-x-4 space-y-2 sm:space-y-0 mb-4 lg:mb-0">
+        <label className="block ms-4 mb-2 text-gray-600 dark:text-gray-400">
+          فیلتر پروژه‌ها
+        </label>
+        <div className="lg:flex justify-between px-4 py-4 border rounded-xl">
+          <div className="content-center flex gap-3 mb-4 lg:mb-0">
             {allTags.map((tag) => (
-              <button
-                key={tag}
-                className="
-                  px-2 py-1 rounded-md text-xs font-light bg-white dark:bg-gray-800 
-                  dark:text-gray-300 text-gray-600 ring-2 ring-gray-500/10 cursor-pointer 
-                  hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors
-                "
-              >
-                #{tag}
+              <button key={tag}>
+                <Tag tag={tag} />
               </button>
             ))}
           </div>
 
           {/* for screen readers only */}
           <label htmlFor="search" className="sr-only">
-            Search projects
+            جستجوی پروژه‌ها
           </label>
           <input
             className="
@@ -89,14 +88,14 @@ export default async function projectsPage() {
             type="search"
             name="search"
             aria-label="Search projects"
-            placeholder="search projects..."
+            placeholder="جستجوی پروژه‌ها..."
           />
         </div>
       </nav>
 
       <section ria-labelledby="projects-heading">
         <div className="section-container py-20">
-          <header className="px-4 mb-8">
+          {/* <header className="px-4 mb-8">
             <h2
               id="projects-heading"
               className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-2"
@@ -106,7 +105,7 @@ export default async function projectsPage() {
             <p className="text-gray-600 dark:text-gray-400">
               Not my actual projects. work in progress.
             </p>
-          </header>
+          </header> */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Project cards */}
             {projects.map((project) => (

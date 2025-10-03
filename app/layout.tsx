@@ -1,17 +1,21 @@
+// style
+import "./globals.css";
 // fonts
-import { Geist, Geist_Mono, Poppins } from "next/font/google";
+
+import { Vazirmatn, Poppins } from "next/font/google";
+
+const vazirmatn = Vazirmatn({
+  subsets: ["arabic"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-vazirmatn",
+  display: "swap", // Avoids blank text while fonts load
+});
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
+  display: "swap", // Avoids blank text while fonts load
 });
 
 // metadata
@@ -24,9 +28,6 @@ export const metadata: Metadata = {
   creator: "Milad",
   publisher: "Milad",
 };
-
-// style
-import "./globals.css";
 
 // components
 import Navbar from "@/components/common/Navbar";
@@ -41,9 +42,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fa" dir="rtl">
       <body
-        className={`${poppins.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${vazirmatn.className} ${poppins.variable} antialiased`}
       >
         <AosProvider>
           <ThemeProvider>

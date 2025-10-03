@@ -34,9 +34,11 @@ export default async function BlogSection() {
         <header className="p-4 pt-0 mb-8 flex justify-between border-b">
           <div>
             <h2 id="blog-section-heading" className="text-2xl font-bold mb-2">
-              Blogs <span aria-hidden="true">📝</span>
+              وبلاگ <span aria-hidden="true">📝</span>
             </h2>
-            <h3 className="text-sm text-gray-600">Latest news in technology</h3>
+            <h3 className="text-sm text-gray-600">
+              خبر‌های جالب رو اینجا دنبال کنید
+            </h3>
           </div>
           <div>
             <Link
@@ -44,7 +46,7 @@ export default async function BlogSection() {
               href="/blog"
               aria-label="read all blog posts"
             >
-              Read more <span aria-hidden="true">→</span>
+              بیشتر بخونید <span aria-hidden="true">←</span>
             </Link>
           </div>
         </header>

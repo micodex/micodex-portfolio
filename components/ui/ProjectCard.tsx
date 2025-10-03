@@ -10,11 +10,11 @@ export default function ProjectCard({ project }: { project: IProject }) {
       className="p-4 bg-white dark:bg-gray-900 shadow-2xl shadow-slate-200/50 dark:shadow-none hover:shadow-sm transition-shadow duration-100 ring-2 ring-gray-100  dark:ring-gray-800 rounded-md overflow-hidden"
     >
       {/* card image */}
-      <div className="relative w-full aspect-4/3 rounded-sm overflow-hidden dark:opacity-84">
+      <div className="relative w-full aspect-4/3 rounded-sm overflow-hidden dark:opacity-90">
         <Image
           className="object-cover w-full"
           src={project.src}
-          alt={`Screenshot of ${project.title} project`}
+          alt={`اسکرین‌شات پروژه ${project.title}`}
           fill={true}
         ></Image>
       </div>
@@ -23,10 +23,10 @@ export default function ProjectCard({ project }: { project: IProject }) {
         <h3 className="font-bold text-l text-gray-800 dark:text-gray-200">
           {project.title}
         </h3>
-        <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+        <p className="mt-1 line-clamp-2 text-sm text-gray-600 dark:text-gray-400">
           {project.description}
         </p>
-        <div className="mt-4 flex gap-3 flex-wrap">
+        <div className="mt-4 flex gap-3 flex-wrap poppins-font">
           {project.tags.map((tag) => (
             <Tag key={tag} tag={tag} />
           ))}
@@ -39,7 +39,7 @@ export default function ProjectCard({ project }: { project: IProject }) {
             className="btn-card"
           >
             <FaGithub aria-hidden="true" />
-            <span className="text-sm">Source</span>
+            <span className="text-sm">سورس</span>
           </a>
           <a
             className="text-sm text-sky-500 hover:underline decoration-2"
@@ -47,7 +47,7 @@ export default function ProjectCard({ project }: { project: IProject }) {
             aria-label={`View live demo of ${project.title}`}
             href={project.projectUrl}
           >
-            view project <span aria-hidden="true">↗</span>
+            مشاهده پروژه <span aria-hidden="true">↖</span>
           </a>
         </div>
       </div>

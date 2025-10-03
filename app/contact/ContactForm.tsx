@@ -46,9 +46,9 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-xl max-w-[520px] mx-auto border dark:border-gray-900">
+    <div className="bg-white dark:bg-gray-900 py-8 px-4 sm:px-8 rounded-xl shadow-xl max-w-[520px] mx-auto border dark:border-gray-900">
       <h2 className="text-2xl text-gray-800 dark:text-gray-200 mb-6">
-        Send me a Message
+        یک پیام بفرستید
       </h2>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
@@ -56,7 +56,7 @@ export default function ContactForm() {
             htmlFor="name"
             className="block text-sm text-gray-700 dark:text-gray-400 font-medium mb-1 ml-1"
           >
-            Name
+            نام
           </label>
           <input
             required
@@ -65,7 +65,7 @@ export default function ContactForm() {
             type="text"
             className="w-full rounded-md px-4 py-3 outline-none bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-800 focus:ring-2 focus:ring-sky-500"
             id="name"
-            placeholder="e.g. John"
+            placeholder="میلاد"
           />
         </div>
         <div>
@@ -73,7 +73,7 @@ export default function ContactForm() {
             htmlFor="email"
             className="block text-sm text-gray-700 dark:text-gray-400 font-medium mb-1 ml-1"
           >
-            Email
+            ایمیل
           </label>
           <input
             required
@@ -90,13 +90,13 @@ export default function ContactForm() {
             htmlFor="subject"
             className="block text-sm text-gray-700 dark:text-gray-400 font-medium mb-1 ml-1"
           >
-            Subject
+            موضوع
           </label>
           <input
             type="text"
             className="w-full rounded-md px-4 py-3 outline-none bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-800 focus:ring-2 focus:ring-sky-500"
             id="subject"
-            placeholder="e.g. collaboration"
+            placeholder="همکاری"
           />
         </div>
         <div>
@@ -104,7 +104,7 @@ export default function ContactForm() {
             htmlFor="message"
             className="block text-sm text-gray-700 dark:text-gray-400 font-medium mb-1 ml-1"
           >
-            Message
+            پیام
           </label>
           <textarea
             required
@@ -113,7 +113,7 @@ export default function ContactForm() {
             rows={5}
             className="w-full outline-none rounded-md px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-800 focus:ring-2 focus:ring-sky-500"
             id="message"
-            placeholder="your message..."
+            placeholder="پیام شما..."
           ></textarea>
         </div>
         <button
@@ -121,7 +121,7 @@ export default function ContactForm() {
           disabled={status === "loading"}
           className="px-4 py-3 w-full text-white rounded-md bg-gradient-to-br from-sky-500 dark:from-indigo-500 dark:to-sky-800 to-indigo-500 hover:to-indigo-400 dark:hover:to-sky-600 transition-colors cursor-pointer"
         >
-          {status === "loading" ? "Sending Message..." : "Send Message"}
+          {status === "loading" ? "در حال ارسال..." : "ارسال پیام"}
         </button>
       </form>
       {status === "success" && (
@@ -129,7 +129,7 @@ export default function ContactForm() {
           className="mt-4 text-center text-green-600 font-semibold"
           aria-live="polite"
         >
-          Thank you! Your message has been sent.
+          ممنون! پیام شما با موفقیت ارسال شد
         </p>
       )}
       {status === "error" && (

@@ -15,18 +15,17 @@ export default function ContactSection() {
             <span className="block text-4xl">🎉</span>
             <h2
               id="contact-heading"
-              className="mt-4 font-bold text-2xl sm:text-3xl text-gray-900"
+              className="mt-4 font-bold text-2xl sm:text-3xl text-sky-950"
             >
-              I am ready to collaborate
+              آماده همکاری هستم
             </h2>
 
             <p className="mt-1 text-gray-800">
-              If you have a project that needs development, let&apos;s talk
-              about it.
+              اگه پروژه‌ای داری که نیاز به توسعه داره، بیا در موردش صحبت کنیم.
             </p>
             <div className="mt-6 block">
               <Link className="btn-primary" href="./contact">
-                Contact me
+                تماس با من
               </Link>
             </div>
           </div>

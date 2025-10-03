@@ -1,7 +1,17 @@
 module.exports = {
-  darkmode: "class",
+  darkMode: "class",
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        vazirmatn: ["var(--font-vazirmatn)", "sans-serif"],
+        poppins: ["var(--font-poppins)", "sans-serif"],
+      },
+    },
   },
-  plugin: [],
+  plugins: [],
 };

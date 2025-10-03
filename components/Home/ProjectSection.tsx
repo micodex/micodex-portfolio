@@ -36,10 +36,10 @@ export default async function ProjectSection() {
               id="project-section-heading"
               className="text-2xl text-gray-800 dark:text-gray-200 font-bold mb-2"
             >
-              Projects <span aria-hidden="true">📂</span>
+              پروژه‌ها <span aria-hidden="true">📂</span>
             </h2>
             <h3 className="text-sm text-gray-600 dark:text-gray-400">
-              A showcase of my best projects
+              یک لیست از بهترین پروژه‌های من
             </h3>
           </div>
           <div>
@@ -48,7 +48,7 @@ export default async function ProjectSection() {
               href="./projects"
               aria-label="View all projects"
             >
-              All Projects →
+              همه پروژه‌ها ←
             </a>
           </div>
         </header>
