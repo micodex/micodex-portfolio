@@ -9,7 +9,7 @@ export default function HeroSection() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative bg-gradient-to-br from-sky-100 to-indigo-100 dark:from-black dark:via-gray-950 dark:to-black"
+      className="relative bg-gradient-to-br from-sky-100 to-indigo-100 dark:from-slate-900 dark:to-slate-900"
     >
       {/* grid background */}
 
@@ -48,7 +48,7 @@ export default function HeroSection() {
                   cursor-pointer active:scale-96 duration-100 ring-sky-300 dark:ring-gray-700
                   "
                 >
-                  <FaGithub size={24} className="ms-2" aria-label="GitHub" />
+                  <FaGithub size={24} className="mr-2" aria-label="GitHub" />
                   <span>مشاهده گیت‌هاب ↗</span>
                 </a>
               </div>
