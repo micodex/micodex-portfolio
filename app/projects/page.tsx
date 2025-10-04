@@ -67,7 +67,7 @@ export default async function projectsPage() {
           فیلتر پروژه‌ها
         </label>
         <div className="lg:flex justify-between px-4 py-4 border rounded-xl">
-          <div className="content-center flex gap-3 mb-4 lg:mb-0">
+          <div className="content-center flex flex-wrap gap-3 mb-4 lg:mb-0">
             {allTags.map((tag) => (
               <button key={tag}>
                 <Tag tag={tag} />
@@ -80,10 +80,7 @@ export default async function projectsPage() {
             جستجوی پروژه‌ها
           </label>
           <input
-            className="
-              px-4 py-2 w-full lg:w-md outline-2 border-none bg-gray-100 outline-gray-200 
-              dark:outline-gray-600 dark:bg-gray-800 focus:outline-gray-400 dark:focus:outline-gray-500 rounded-xl
-            "
+            className="search-input lg:w-md"
             id="search"
             type="search"
             name="search"
