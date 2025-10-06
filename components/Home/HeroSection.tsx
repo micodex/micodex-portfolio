@@ -9,7 +9,7 @@ export default function HeroSection() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative bg-gradient-to-br from-sky-100 to-indigo-100 dark:from-slate-900 dark:to-slate-900"
+      className="relative bg-gradient-to-br from-sky-50 to-sky-50 dark:from-gray-950 dark:to-gray-900"
     >
       {/* grid background */}
 
@@ -22,7 +22,7 @@ export default function HeroSection() {
 
         <div className="lg:flex gap-10 pb-20 pt-40">
           <div className="flex flex-col">
-            <div className="z-1 px-6 py-12 rounded-xl bg-gradient-to-br from-sky-50 to-sky-100 dark:from-gray-950 dark:to-gray-900 ring-2 dark:ring-gray-900 ring-sky-200">
+            <div className="z-1 px-6 py-12 rounded-xl bg-gradient-to-br from-sky-50 to-sky-100 dark:from-gray-900 dark:to-gray-800 ring-2 dark:ring-gray-800 ring-sky-200">
               <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-200 ">
                 سلام <span aria-hidden="true">👋</span> من میلاد هستم
               </h1>
