@@ -4,6 +4,7 @@ import { FaGithub } from "react-icons/fa";
 // components
 import HeroCode from "@/components/ui/HeroCode";
 import HeroSocial from "../ui/HeroSocial";
+import HeroTerminal from "../ui/HeroTerminal";
 
 export default function HeroSection() {
   return (
@@ -30,10 +31,10 @@ export default function HeroSection() {
                 یک توسعه دهنده فول-استک
               </h2>
               <p className="mt-4 text-md text-gray-700 dark:text-gray-400 max-w-150 ">
-                من یک برنامه‌نویس فول استک هستم که عاشق تبدیل ایده‌ها به
-                واقعیتم؛ از شروع کار تا ساختن یک تجربه کاربری بی‌نقص. چون هم
-                برای طراحی زیبا و هم برای عملکرد قوی اهمیت قائلم و اپلیکیشن‌های
-                وبی می‌سازم که واقعاً تأثیرگذارند.
+                یک برنامه‌نویس فول استک که عاشق تبدیل ایده‌ها به واقعیتم؛ از
+                شروع کار تا ساختن یک تجربه کاربری بی‌نقص. چون هم برای طراحی زیبا
+                و هم برای عملکرد قوی اهمیت قائلم و اپلیکیشن‌های وبی می‌سازم که
+                واقعاً تأثیرگذارند.
               </p>
               <div className="flex gap-4 mt-6">
                 <a
@@ -53,12 +54,13 @@ export default function HeroSection() {
                 </a>
               </div>
             </div>
-            <div className="z-1 lg:mt-auto lg:mx-0 mt-8 mx-auto">
+            <div className="z-1 lg:mt-20 lg:mx-0 mt-8 mx-auto">
               <HeroSocial />
             </div>
           </div>
-          <div className="flex-grow">
-            <HeroCode />
+          <div className="flex-grow hidden lg:block">
+            {/* <HeroCode /> */}
+            <HeroTerminal />
           </div>
         </div>
       </div>

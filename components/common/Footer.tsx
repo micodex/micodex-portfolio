@@ -42,7 +42,7 @@ const Footer = () => {
           </div>
 
           <div className="space-y-4 px-4">
-            <h3 className="text-xl font-bold text-gray-100">صفحه‌ها 📄</h3>
+            <h3 className="text-xl font-bold text-gray-100">صفحه‌ها</h3>
             <ul className="space-y-2">
               <li>
                 <a
@@ -80,7 +80,7 @@ const Footer = () => {
           </div>
 
           <div className="space-y-4 px-4">
-            <h3 className="text-xl font-bold text-white">خدمات ⭐</h3>
+            <h3 className="text-xl font-bold text-white">خدمات</h3>
             <ul className="space-y-2">
               <li>
                 <a
@@ -118,7 +118,7 @@ const Footer = () => {
           </div>
 
           <div className="space-y-4 px-4">
-            <h3 className="text-xl font-bold text-white"> تماس 🤝</h3>
+            <h3 className="text-xl font-bold text-white">تماس</h3>
             <div className="space-y-2">
               <div className="flex items-center space-x-3">
                 <IoMailOutline className="text-xl text-gray-200" />
@@ -128,7 +128,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <CiLocationOn className="text-xl text-gray-200" />
-                <span className="text-gray-400">ایران، اصفهان</span>
+                <span className="text-sm text-gray-400">ایران، اصفهان</span>
               </div>
             </div>
           </div>

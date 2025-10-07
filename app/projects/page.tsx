@@ -31,8 +31,8 @@ export default async function projectsPage() {
   const allTags = ["Next.js", "React", "TypeScript", "Front-End", "Full-Stack"];
 
   return (
-    <div className="bg-gray-50 dark:bg-gray-950">
-      <header className="mb-10 overflow-hidden">
+    <div className="bg-gray-50 dark:bg-gray-950 overflow-x-hidden">
+      <header className="mb-10">
         <div className="relative section-container pt-40 pb-20">
           {/* blur background */}
           <div
@@ -80,7 +80,7 @@ export default async function projectsPage() {
             جستجوی پروژه‌ها
           </label>
           <input
-            className="search-input lg:w-md"
+            className="input-style lg:w-md"
             id="search"
             type="search"
             name="search"

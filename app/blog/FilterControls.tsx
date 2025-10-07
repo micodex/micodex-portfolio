@@ -47,7 +47,7 @@ export default function FilterControls({ allTags }: { allTags: string[] }) {
       {/* search input */}
       <form onSubmit={handleSearch}>
         <input
-          className="search-input lg:w-md"
+          className="input-style lg:w-md"
           type="search"
           name="search"
           aria-label="search blog posts"
