@@ -7,7 +7,7 @@ if (!password) {
   process.exit(1); //immediately stops the program and signals that it exited with an error.
 }
 
-const salt = 12;
+const salt = 10;
 
 const hash = bcrypt.hashSync(password, salt);
 
