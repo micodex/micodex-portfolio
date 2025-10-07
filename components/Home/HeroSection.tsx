@@ -2,7 +2,6 @@ import "@/styles/custom.css";
 import { FaGithub } from "react-icons/fa";
 
 // components
-import HeroCode from "@/components/ui/HeroCode";
 import HeroSocial from "../ui/HeroSocial";
 import HeroTerminal from "../ui/HeroTerminal";
 
