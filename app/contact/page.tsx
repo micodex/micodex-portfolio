@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="bg-gray-50 dark:bg-gray-950">
-      <header className="relative overflow-hidden">
+    <div className="bg-gray-50 dark:bg-gray-950 overflow-x-hidden">
+      <header className="relative">
         {/* <div
           className="absolute inset-0 h-full w-full opacity-50
         bg-[radial-gradient(circle,#73737350_1px,transparent_1px)] 

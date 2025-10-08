@@ -2,14 +2,14 @@ import "@/styles/custom.css";
 import { FaGithub } from "react-icons/fa";
 
 // components
-import HeroCode from "@/components/ui/HeroCode";
 import HeroSocial from "../ui/HeroSocial";
+import HeroTerminal from "../ui/HeroTerminal";
 
 export default function HeroSection() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative bg-gradient-to-br from-sky-100 to-indigo-100 dark:from-slate-900 dark:to-slate-900"
+      className="relative bg-gradient-to-br from-sky-50 to-sky-50 dark:from-gray-950 dark:to-gray-900"
     >
       {/* grid background */}
 
@@ -22,7 +22,7 @@ export default function HeroSection() {
 
         <div className="lg:flex gap-10 pb-20 pt-40">
           <div className="flex flex-col">
-            <div className="z-1 px-6 py-12 rounded-xl bg-gradient-to-br from-sky-50 to-sky-100 dark:from-gray-950 dark:to-gray-900 ring-2 dark:ring-gray-900 ring-sky-200">
+            <div className="z-1 px-6 py-12 rounded-xl bg-gradient-to-br from-sky-50 to-sky-100 dark:from-gray-900 dark:to-gray-800 ring-2 dark:ring-gray-800 ring-sky-200">
               <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-200 ">
                 سلام <span aria-hidden="true">👋</span> من میلاد هستم
               </h1>
@@ -30,10 +30,10 @@ export default function HeroSection() {
                 یک توسعه دهنده فول-استک
               </h2>
               <p className="mt-4 text-md text-gray-700 dark:text-gray-400 max-w-150 ">
-                من یک برنامه‌نویس فول استک هستم که عاشق تبدیل ایده‌ها به
-                واقعیتم؛ از شروع کار تا ساختن یک تجربه کاربری بی‌نقص. چون هم
-                برای طراحی زیبا و هم برای عملکرد قوی اهمیت قائلم و اپلیکیشن‌های
-                وبی می‌سازم که واقعاً تأثیرگذارند.
+                یک برنامه‌نویس فول استک که عاشق تبدیل ایده‌ها به واقعیتم؛ از
+                شروع کار تا ساختن یک تجربه کاربری بی‌نقص. چون هم برای طراحی زیبا
+                و هم برای عملکرد قوی اهمیت قائلم و اپلیکیشن‌های وبی می‌سازم که
+                واقعاً تأثیرگذارند.
               </p>
               <div className="flex gap-4 mt-6">
                 <a
@@ -53,12 +53,13 @@ export default function HeroSection() {
                 </a>
               </div>
             </div>
-            <div className="z-1 lg:mt-auto lg:mx-0 mt-8 mx-auto">
+            <div className="z-1 lg:mt-20 lg:mx-0 mt-8 mx-auto">
               <HeroSocial />
             </div>
           </div>
-          <div className="flex-grow">
-            <HeroCode />
+          <div className="flex-grow hidden lg:block">
+            {/* <HeroCode /> */}
+            <HeroTerminal />
           </div>
         </div>
       </div>

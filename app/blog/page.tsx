@@ -46,8 +46,8 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
   const allTags = ["all", "news", "programming", "ai", "tech"];
 
   return (
-    <div className="bg-gray-50 dark:bg-gray-950">
-      <header className="mb-10 overflow-hidden">
+    <div className="bg-gray-50 dark:bg-gray-950 overflow-x-hidden">
+      <header className="mb-10">
         <div className="relative section-container pt-40 pb-20 ">
           {/* blur background */}
           <div
