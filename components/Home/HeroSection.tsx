@@ -9,16 +9,21 @@ export default function HeroSection() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative bg-gradient-to-br from-sky-50 to-sky-50 dark:from-gray-950 dark:to-gray-900"
+      className="relative bg-sky-50 dark:bg-gray-900"
     >
       {/* grid background */}
 
       <div className="section-container">
-        <div
+        {/* <div
           className="absolute z-0 inset-0 h-full w-full 
         bg-[linear-gradient(to_right,#73737320_1px,transparent_1px),linear-gradient(to_bottom,#73737320_1px,transparent_1px)] 
         bg-[size:50px_50px] opacity-40"
-        />
+        /> */}
+        <div
+          className="absolute inset-0 h-full w-full opacity-60
+            bg-[radial-gradient(circle,#73737350_1px,transparent_1px)] 
+            bg-[size:30px_30px]"
+        ></div>
 
         <div className="lg:flex gap-10 pb-20 pt-40">
           <div className="flex flex-col">

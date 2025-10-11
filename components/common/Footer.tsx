@@ -8,7 +8,7 @@ import { CiLocationOn } from "react-icons/ci";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-gray-400 py-20 border-t-2 border-t-gray-800">
+    <footer className="relative bg-black text-gray-400 py-20 border-t-2 border-t-gray-800">
       <div className="section-container">
         <div className="grid gap-10 grid-cols-1 lg:grid-cols-4 md:grid-cols-2">
           <div className="space-y-4 px-4">
@@ -158,6 +158,11 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <div
+        className="absolute inset-0 h-full w-full opacity-50
+          bg-[radial-gradient(circle,#73737350_1px,transparent_1px)] 
+          bg-[size:30px_30px]"
+      ></div>
     </footer>
   );
 };
