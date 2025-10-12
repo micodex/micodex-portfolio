@@ -34,8 +34,8 @@ const Navbar = () => {
         <div
           className="
             relative py-5 px-6 flex justify-between rounded-full
-            bg-gradient-to-r from-gray-100/9 via-white/15 to-gray-100/9 dark:bg-black/60
-            ring-4 dark:ring-black/20 ring-white/50 backdrop-blur-lg
+            bg-gradient-to-r from-gray-100/9 via-white/10 to-gray-100/9 dark:bg-black/60
+            ring-4 dark:ring-black/10 ring-gray-200/50 backdrop-blur-lg
            "
         >
           {/* logo */}

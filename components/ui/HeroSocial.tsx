@@ -34,7 +34,7 @@ const socialLinks = [
 
 const HeroSocial = () => {
   return (
-    <ul className="inline-flex space-x-4 p-1 rounded-full bg-gradient-to-r text-sky-900 dark:from-gray-900 dark:to-gray-800 ring-4 ring-sky-200 dark:ring-gray-800">
+    <ul className="inline-flex space-x-4 p-1 rounded-full bg-gradient-to-r text-sky-900 ring-4 ring-sky-200 dark:ring-gray-800">
       {socialLinks.map((link) => (
         <li
           key={link.id}

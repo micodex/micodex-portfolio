@@ -1,5 +1,6 @@
 import "@/styles/custom.css";
 import { FaGithub } from "react-icons/fa";
+import * as motion from "motion/react-client";
 
 // components
 import HeroSocial from "../ui/HeroSocial";
@@ -20,28 +21,31 @@ export default function HeroSection() {
         bg-[size:50px_50px] opacity-40"
         /> */}
         <div
-          className="absolute inset-0 h-full w-full opacity-60
+          className="absolute inset-0 h-full w-full opacity-70
             bg-[radial-gradient(circle,#73737350_1px,transparent_1px)] 
             bg-[size:30px_30px]"
         ></div>
 
         <div className="lg:flex gap-10 pb-20 pt-40">
           <div className="flex flex-col">
-            <div className="z-1 px-6 py-12 rounded-xl bg-gradient-to-br from-sky-50 to-sky-100 dark:from-gray-900 dark:to-gray-800 ring-2 dark:ring-gray-800 ring-sky-200">
+            <div className="z-1 px-6 py-6 rounded-xl bg-sky-100/30 dark:bg-gray-800/20 ring-2 dark:ring-gray-800 ring-sky-200">
               <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-200 ">
                 سلام <span aria-hidden="true">👋</span> من میلاد هستم
               </h1>
-              <h2 className="mt-2 text-2xl font-normal bg-gradient-to-r from-sky-600 to-violet-400 bg-clip-text text-transparent">
+              <h2 className="mt-2 text-2xl font-normal bg-gradient-to-r from-sky-600 to-indigo-400 bg-clip-text text-transparent">
                 یک توسعه دهنده فول-استک
               </h2>
-              <p className="mt-4 text-md text-gray-700 dark:text-gray-400 max-w-150 ">
-                یک برنامه‌نویس فول استک که عاشق تبدیل ایده‌ها به واقعیتم؛ از
-                شروع کار تا ساختن یک تجربه کاربری بی‌نقص. چون هم برای طراحی زیبا
-                و هم برای عملکرد قوی اهمیت قائلم و اپلیکیشن‌های وبی می‌سازم که
-                واقعاً تأثیرگذارند.
+              <p className="mt-6 text-md text-gray-700 dark:text-gray-400 max-w-150">
+                با تمرکز بر طراحی تمیز و تجربه کاربری هوشمند. با استفاده از
+                تکنولوژی‌های مدرن اپلیکیشن‌هایی می‌سازم که هم زیبا باشن و هم
+                سریع. من به جزئیات توجه زیادی دارم، چون معتقدم هر پیکسل و هر خط
+                کد می‌تونه تجربه کاربر رو تغییر بده. هدفم ساخت محصولاتی‌ست که
+                نه‌تنها درست کار کنن، بلکه حس خوبی به کاربر بدن.
               </p>
               <div className="flex gap-4 mt-6">
-                <a
+                <motion.a
+                  whileTap={{ scale: 1 }}
+                  whileHover={{ scale: 1.1 }}
                   dir="ltr"
                   href="https://github.com/micodex"
                   target="_blank"
@@ -49,13 +53,13 @@ export default function HeroSection() {
                   className="
                   flex justify-center items-center py-3 px-5 bg-gradient-to-br rounded-xl
                 from-sky-600 to-sky-300 hover:to-sky-400 text-white ring-4
-                dark:from-gray-900 dark:to-gray-700 dark:hover:to-gray-600 transition
-                  cursor-pointer active:scale-96 duration-100 ring-sky-300 dark:ring-gray-700
+                dark:from-gray-900 dark:to-gray-700 dark:hover:to-gray-600
+                  cursor-pointer ring-sky-300 dark:ring-gray-700
                   "
                 >
                   <FaGithub size={24} className="mr-2" aria-label="GitHub" />
                   <span>مشاهده گیت‌هاب ↗</span>
-                </a>
+                </motion.a>
               </div>
             </div>
             <div className="z-1 lg:mt-20 lg:mx-0 mt-8 mx-auto">

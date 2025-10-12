@@ -159,7 +159,7 @@ const Footer = () => {
         </div>
       </div>
       <div
-        className="absolute inset-0 h-full w-full opacity-50
+        className="absolute inset-0 h-full w-full opacity-60
           bg-[radial-gradient(circle,#73737350_1px,transparent_1px)] 
           bg-[size:30px_30px]"
       ></div>

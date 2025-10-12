@@ -119,7 +119,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status === "loading"}
-          className="px-4 py-3 w-full text-white rounded-md bg-gradient-to-br from-sky-500 dark:from-indigo-500 dark:to-sky-800 to-indigo-500 hover:to-indigo-400 dark:hover:to-sky-600 transition-colors cursor-pointer"
+          className="btn-primary py-4 w-full justify-center cursor-pointer"
         >
           {status === "loading" ? "در حال ارسال..." : "ارسال پیام"}
         </button>
