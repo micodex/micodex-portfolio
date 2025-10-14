@@ -44,7 +44,7 @@ export default function HeroSection() {
               </p>
               <div className="flex gap-4 mt-6">
                 <motion.a
-                  whileTap={{ scale: 1 }}
+                  whileTap={{ scale: 0.9 }}
                   whileHover={{ scale: 1.1 }}
                   dir="ltr"
                   href="https://github.com/micodex"
