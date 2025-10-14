@@ -34,8 +34,8 @@ const Navbar = () => {
         <div
           className="
             relative py-5 px-6 flex justify-between rounded-full
-            bg-gradient-to-r from-gray-100/9 via-white/10 to-gray-100/9 dark:bg-black/60
-            ring-4 dark:ring-black/10 ring-gray-200/50 backdrop-blur-lg
+            bg-gray-sky-50/10 dark:bg-gray-950/60
+            ring-4 dark:ring-sky-200/5 ring-sky-200/50 backdrop-blur-lg
            "
         >
           {/* logo */}
@@ -74,13 +74,13 @@ const Navbar = () => {
           <div className="flex-1 flex justify-end gap-3">
             <button
               onClick={toggleTheme}
-              className="cursor-pointer hover:text-sky-500 transition-colors"
+              className="cursor-pointer hover:text-sky-500 transition-colors text-gray-800 dark:text-gray-200"
               aria-label="Toggle theme"
             >
               {theme === "light" ? (
-                <MdOutlineDarkMode size={22} />
+                <MdOutlineDarkMode size={24} />
               ) : (
-                <MdOutlineLightMode size={22} />
+                <MdOutlineLightMode size={24} />
               )}
             </button>
             <button
@@ -89,9 +89,9 @@ const Navbar = () => {
               aria-label="Toggle mobile menu"
             >
               {isMobileMenuOpen ? (
-                <RxCross2 size={22} />
+                <RxCross2 size={24} />
               ) : (
-                <RxHamburgerMenu size={22} />
+                <RxHamburgerMenu size={24} />
               )}
             </button>
           </div>
