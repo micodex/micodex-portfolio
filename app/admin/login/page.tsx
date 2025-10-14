@@ -33,13 +33,13 @@ export default function LoginPage() {
   };
   return (
     <div className="bg-gray-50 dark:bg-neutral-950 min-h-screen">
-      <div className="section-container py-40 flex justify-center items-center">
+      <div className="section-container  py-40 flex justify-center items-center">
         <form
           action=""
           onSubmit={handleSubmit}
-          className="p-6 w-md max-w-md rounded-xl bg-whitedark:bg-neutral-900 shadow-xl shadow-slate-200 border-2 border-gray-100 dark:border-stone-800 dark:shadow-none"
+          className="p-6 w-md max-w-md rounded-xl bg-white dark:bg-neutral-900 shadow-xl shadow-slate-200 border border-gray-100 dark:border-stone-800 dark:shadow-none"
         >
-          <h1 className="text-2xl text-center font-bold">ورود به پنل </h1>
+          <h1 className="text-2xl text-center font-bold">فرم ورود</h1>
           <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm text-center">
             لطفا نام کاربری و کلمه عبور را وارد کنید
           </p>
