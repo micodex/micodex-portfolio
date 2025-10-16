@@ -3,12 +3,12 @@ import { FaGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { FaCodepen } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-import { IoMailOutline } from "react-icons/io5";
-import { CiLocationOn } from "react-icons/ci";
+import { Mail } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-black text-gray-400 py-20 border-t-2 border-t-gray-800">
+    <footer className="z-0 relative bg-black text-gray-400 py-20 border-t-2 border-t-gray-800">
       <div className="section-container">
         <div className="grid gap-10 grid-cols-1 lg:grid-cols-4 md:grid-cols-2">
           <div className="space-y-4 px-4">
@@ -121,13 +121,13 @@ const Footer = () => {
             <h3 className="text-xl font-bold text-white">تماس</h3>
             <div className="space-y-2">
               <div className="flex items-center space-x-3">
-                <IoMailOutline className="text-xl text-gray-200" />
+                <Mail className="w-4 h-4 text-gray-200" />
                 <span className="text-sm text-gray-400">
                   hello@devportfolio.com
                 </span>
               </div>
               <div className="flex items-center space-x-3">
-                <CiLocationOn className="text-xl text-gray-200" />
+                <MapPin className="w-4 h-4 text-gray-200" />
                 <span className="text-sm text-gray-400">ایران، اصفهان</span>
               </div>
             </div>
@@ -145,7 +145,7 @@ const Footer = () => {
             <span className="block mt-2">Pixels & Logic by Milad</span>
           </div>
 
-          <div className="flex space-x-6">
+          <div className="flex gap-6">
             <a href="#" className="text-gray-500 hover:text-sky-400 text-sm">
               Privacy Policy
             </a>
@@ -159,7 +159,7 @@ const Footer = () => {
         </div>
       </div>
       <div
-        className="absolute inset-0 h-full w-full opacity-60
+        className="absolute -z-1 inset-0 h-full w-full opacity-70
           bg-[radial-gradient(circle,#73737350_1px,transparent_1px)] 
           bg-[size:30px_30px]"
       ></div>
