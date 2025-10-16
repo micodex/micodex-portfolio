@@ -51,10 +51,6 @@ export default function HeroTerminal() {
         <AnimatedSpan className="text-muted-foreground">
           ✅ Portfolio build completed successfully!
         </AnimatedSpan>
-
-        <TypingAnimation className="text-muted-foreground">
-          Pixels & Logic by Milad
-        </TypingAnimation>
       </Terminal>
     </div>
   );

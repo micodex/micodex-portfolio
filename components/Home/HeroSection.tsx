@@ -33,15 +33,17 @@ export default function HeroSection() {
                 سلام <span aria-hidden="true">👋</span> من میلاد هستم
               </h1>
               <h2 className="mt-2 text-2xl font-normal bg-gradient-to-r from-sky-600 to-indigo-400 bg-clip-text text-transparent">
-                یک توسعه دهنده فول-استک
+                یک توسعه دهنده وب
               </h2>
               <p className="mt-6 text-md text-gray-700 dark:text-gray-400 max-w-150">
-                با تمرکز بر طراحی تمیز و تجربه کاربری هوشمند. با استفاده از
+                تمرکز من روی طراحی تمیز و تجربه کاربری هوشمنده و با استفاده از
                 تکنولوژی‌های مدرن اپلیکیشن‌هایی می‌سازم که هم زیبا باشن و هم
                 سریع. من به جزئیات توجه زیادی دارم، چون معتقدم هر پیکسل و هر خط
                 کد می‌تونه تجربه کاربر رو تغییر بده. هدفم ساخت محصولاتی‌ست که
                 نه‌تنها درست کار کنن، بلکه حس خوبی به کاربر بدن.
               </p>
+
+              {/* CTA button */}
               <div className="flex gap-4 mt-6">
                 <motion.a
                   whileTap={{ scale: 0.9 }}
