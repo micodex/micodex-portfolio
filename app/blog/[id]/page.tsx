@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { blogs } from "@/lib/data/blogs";
+import connectDB from "@/lib/mongodb";
+import Blog, { IBlog } from "@/models/blog";
 
 export default async function BlogPage({
   params,
@@ -8,21 +9,22 @@ export default async function BlogPage({
   params: Promise<{ id: string[] }>;
 }) {
   const { id } = await params;
+  await connectDB();
 
-  const blog = blogs.find((b) => b.id === Number(id));
+  const blog = await Blog.findById(id).lean<IBlog>();
 
   if (!blog) {
     return (
       <div className="section-container h-screen my-40">
         <div className="flex flex-col justify-center items-center space-y-4">
-          <h1 className="font-bold text-4xl text-center text-rose-500">
-            Blog post not found
+          <h1 className="font-bold text-4xl text-center text-red-500">
+            بلاگ پست پیدا نشد
           </h1>
           <Link
-            className="font-medium  hover:text-violet-500 decoration-wavy underline-offset-6 hover:underline"
+            className="font-medium  hover:text-sky-500 underline-offset-7 hover:underline"
             href="/blog"
           >
-            Return to blog
+            بازگشت به وبلاگ
           </Link>
         </div>
       </div>
@@ -31,8 +33,8 @@ export default async function BlogPage({
 
   return (
     <section className=" bg-gray-50 dark:bg-gray-950">
-      <article className="w-[768px] mx-auto py-40">
-        <div className="relative  aspect-16/9 border rounded-lg overflow-hidden">
+      <article className="max-w-[768px] mx-auto px-4 py-40">
+        <div className="relative aspect-16/9 border rounded-lg overflow-hidden">
           <Image
             src={blog.src}
             alt={blog.title}

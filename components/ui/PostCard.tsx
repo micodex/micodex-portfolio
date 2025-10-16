@@ -20,7 +20,7 @@ export default function PostCard({ blog }: { blog: IBlog }) {
       {/* post content */}
       <div className="flex flex-col space-y-2">
         <h3 className="font-bold text-md  text-gray-800 dark:text-gray-200 hover:text-sky-500 dark:hover:text-sky-400 hover:cursor-pointer transition-colors">
-          <a href={`/blog/${blog.id}`}>{blog.title}</a>
+          <a href={`/blog/${blog._id}`}>{blog.title}</a>
         </h3>
         <p className="line-clamp-2 text-gray-600 dark:text-gray-400 text-xs sm:text-sm">
           {blog.description}
