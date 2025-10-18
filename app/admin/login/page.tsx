@@ -3,6 +3,10 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
+import { Lock } from "lucide-react";
+import { User } from "lucide-react";
+import { Sparkle } from "lucide-react";
+
 export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -37,15 +41,17 @@ export default function LoginPage() {
         <form
           action=""
           onSubmit={handleSubmit}
-          className="p-6 w-md max-w-md rounded-xl bg-whitedark:bg-neutral-900 shadow-xl shadow-slate-200 border-2 border-gray-100 dark:border-stone-800 dark:shadow-none"
+          className="p-6 w-md max-w-md rounded-xl bg-whitedark:bg-neutral-900 shadow-xl shadow-slate-200 border-2 border-gray-200 dark:border-stone-900 dark:shadow-none"
         >
+          {/* logo */}
+          <Sparkle className="text-sky-500 text-center animate-pulse" />
           <h1 className="text-2xl text-center font-bold">ورود به پنل </h1>
           <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm text-center">
             لطفا نام کاربری و کلمه عبور را وارد کنید
           </p>
           <div className="relative mt-16">
             <label
-              className="absolute -top-6 right-2 text-sm text-neutral-600 dark:text-gray-400"
+              className="absolute -top-6 right-3 text-sm text-neutral-600 dark:text-gray-400"
               htmlFor="username"
             >
               نام کاربری
@@ -54,12 +60,14 @@ export default function LoginPage() {
               id="username"
               type="text"
               placeholder="Admin"
-              className="input-style dark:bg-neutral-800  dark:border-neutral-700"
+              className="input-style pr-8 dark:bg-neutral-800  dark:border-neutral-700"
             />
+            {/* icon */}
+            <User className="absolute w-4 h-4 top-3.5 right-3 text-gray-500" />
           </div>
           <div className="relative mt-12">
             <label
-              className="absolute -top-6 right-2 text-sm text-neutral-600 dark:text-gray-400"
+              className="absolute -top-6 right-3 text-sm text-neutral-600 dark:text-gray-400"
               htmlFor="password"
             >
               کلمه عبور
@@ -69,14 +77,17 @@ export default function LoginPage() {
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
-              className="input-style dark:bg-neutral-800 dark:border-neutral-700"
+              className="input-style pr-8 dark:bg-neutral-800 dark:border-neutral-700"
               type="password"
+              placeholder="******"
             />
             {error && (
               <span className="absolute -bottom-6 right-2 text-sm text-red-500">
                 {error}
               </span>
             )}
+            {/* icon */}
+            <Lock className="absolute w-4 h-4 top-3.5 right-3 text-gray-500" />
           </div>
           <div className="mt-12">
             <button type="submit" className="btn-primary rounded-xl w-full">
