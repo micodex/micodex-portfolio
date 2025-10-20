@@ -30,8 +30,11 @@ export async function GET(request: Request) {
     // Log the query for debugging
     console.log("MongoDB Query:", query);
 
-    // Fetch filtered blog posts, sorted by createdAt (newest first)
-    const blogPosts = await Blog.find(query);
+    // Fetch filtered blog posts, sorted by newest first
+    // TODO: fix sort
+    const blogPosts = (
+      await Blog.find(query).sort({ createdAt: -1 })
+    ).reverse();
 
     return NextResponse.json({ success: true, data: blogPosts });
   } catch (error) {

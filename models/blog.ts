@@ -12,36 +12,39 @@ export interface IBlog extends Document {
 }
 
 //  2. Define the Mongoose Schema
-const BlogSchema: Schema = new Schema({
-  title: {
-    type: String,
-    required: [true],
+const BlogSchema: Schema = new Schema(
+  {
+    title: {
+      type: String,
+      required: [true],
+    },
+    description: {
+      type: String,
+      required: [true],
+    },
+    author: {
+      type: String,
+      required: [true],
+    },
+    date: {
+      type: String,
+      required: [true],
+    },
+    src: {
+      type: String,
+      required: [true],
+    },
+    tags: {
+      type: [String],
+      required: [true],
+    },
+    content: {
+      type: String,
+      required: [true],
+    },
   },
-  description: {
-    type: String,
-    required: [true],
-  },
-  author: {
-    type: String,
-    required: [true],
-  },
-  date: {
-    type: String,
-    required: [true],
-  },
-  src: {
-    type: String,
-    required: [true],
-  },
-  tags: {
-    type: [String],
-    required: [true],
-  },
-  content: {
-    type: String,
-    required: [true],
-  },
-});
+  { timestamps: true }
+);
 
 // 3. Create and export the Mongoose model
 export default mongoose.models.Blog ||
