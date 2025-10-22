@@ -35,7 +35,7 @@ export default async function BlogPage({
   return (
     <section className="bg-[#FCFAF6] dark:bg-gray-950">
       <article className="">
-        <div className="  bg-gray-100 dark:bg-gray-900 px-4 pt-30 pb-10">
+        <div className="bg-gray-100 dark:bg-gray-900 px-0 pt-30 pb-10">
           {/* post header */}
           <div className="max-w-[768px] mx-auto px-4 text-gray-600 dark:text-gray-400">
             <div className="mb-8 inline-flex gap-1 px-4 py-2 text-sm rounded-full bg-gray-200 hover:bg-gray-300 dark:hover:bg-gray-800 dark:bg-gray-950 transition-colors active:scale-90">
@@ -47,7 +47,7 @@ export default async function BlogPage({
             <h1 className="mb-8 text-xl sm:text-3xl font-bold text-gray-800 dark:text-gray-200">
               {blog.title}
             </h1>
-            <div className="relative aspect-16/9 border rounded-lg overflow-hidden">
+            <div className="px-0 relative aspect-16/9 border rounded-lg overflow-hidden">
               <Image
                 src={blog.src}
                 alt={blog.title}
@@ -55,7 +55,7 @@ export default async function BlogPage({
                 className="object-cover"
               />
             </div>
-            <div className="mt-4 flex gap-6 text-gray-600 dark:text-gray-400 text-sm">
+            <div className="mt-2 ms-2 flex gap-6 text-gray-600 dark:text-gray-400 text-xs">
               <span>نویسنده: {blog.author}</span>
               <span>تاریخ انتشار: {blog.date.split(",")[0]}</span>
             </div>
