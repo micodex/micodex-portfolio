@@ -2,9 +2,9 @@
 import type { Colors } from "@/types/skill";
 import type { Skill } from "@/types/skill";
 
-import { SiJavascript } from "react-icons/si";
+import { SiTypescript } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
-import { FaNodeJs } from "react-icons/fa";
+import { SiExpress } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { SiNextdotjs } from "react-icons/si";
 import { SiMongodb } from "react-icons/si";
@@ -37,11 +37,11 @@ export const skills: Skill[] = [
   {
     id: 1,
     type: "Front-End",
-    icon: <SiJavascript />,
+    icon: <SiTypescript />,
     color: "orange",
-    title: "JavaScript",
+    title: "TypeScript",
     description:
-      "Modern ES6+ features, async programming, and functional patterns.",
+      "تسلط بالا بر TypeScript برای ساخت برنامه‌های مقیاس‌پذیر و قابل نگهداری با استفاده از تایپ ایستا و معماری تمیز. آشنا با ویژگی‌های مدرن ES6+، اینترفیس‌ها و Generics برای کاهش خطا و بهبود تجربه توسعه. توانایی نوشتن کدهای تمیز و قابل استفاده مجدد در پروژه‌های فرانت‌اند و بک‌اند.",
     level: "92%",
   },
   {
@@ -51,17 +51,17 @@ export const skills: Skill[] = [
     color: "blue",
     title: "React.js",
     description:
-      "Skilled in building dynamic UIs with hooks, state management...",
+      "تجربه در ساخت رابط‌های کاربری پویا و بهینه با استفاده از هوک‌ها. مهارت در مدیریت state پیچیده با Context API و طراحی کامپوننت محور. تمرکز بر نوشتن کدهای ماژولار و بهینه‌سازی عملکرد رندرینگ برای تجربه کاربری سریع و روان.",
     level: "70%",
   },
   {
     id: 3,
     type: "Back-End",
-    icon: <FaNodeJs />,
+    icon: <SiExpress />,
     color: "green",
-    title: "Node.js",
+    title: "Express",
     description:
-      "Experienced in server-side dev, RESTful APIs, and event-driven architecture.",
+      "تسلط بر توسعه APIهای RESTful و اپلیکیشن‌های سمت سرور با Express.js. آشنا با پیاده‌سازی middleware، routing و سیستم‌های احراز هویت برای ساخت بک‌اند مقیاس‌پذیر. تمرکز بر ایجاد منطق سرور امن، کارا و مستند.",
     level: "60%",
   },
   {
@@ -71,7 +71,7 @@ export const skills: Skill[] = [
     color: "pink",
     title: "Tailwind CSS",
     description:
-      " Adept at crafting responsive designs using utility-first CSS framework.",
+      "مهارت بالا در طراحی رابط‌های واکنش‌گرا و مدرن با استفاده از Tailwind CSS و رویکرد utility-first. توانایی ساخت سیستم‌های طراحی منسجم و بهینه‌سازی عملکرد CSS. تمرکز بر ارائه رابط‌های زیبا، سبک و سازگار با موبایل.",
     level: "98%",
   },
   {
@@ -81,8 +81,8 @@ export const skills: Skill[] = [
     color: "green",
     title: "MongoDB",
     description:
-      "Capable of designing scalable NoSQL schemas and handling complex queries.",
-    level: "40%",
+      "توانایی طراحی ساختارهای NoSQL منعطف و بهینه برای عملکرد بالا در MongoDB. آشنا با کوئری‌های پیچیده، ایندکس‌گذاری و پایپ‌لاین‌های aggregation. تمرکز بر حفظ یکپارچگی داده‌ها و ساخت دیتابیس‌های کارآمد برای پروژه‌های واقعی.",
+    level: "30%",
   },
   {
     id: 6,
@@ -91,7 +91,7 @@ export const skills: Skill[] = [
     color: "slate",
     title: "Next.js",
     description:
-      " Familiar with SSR, API routes, and optimized full-stack React applications.",
+      "تسلط بر توسعه اپلیکیشن‌های فول‌استک با Next.js با بهره‌گیری از قابلیت‌های SSR و SSG برای بهبود عملکرد و سئو. آشنا با پیاده‌سازی dynamic routing،  API Routes و بهینه‌سازی رندر سمت سرور. تمرکز بر ساخت ساختارهای تمیز، مقیاس‌پذیر و حرفه‌ای برای پروژه‌های مدرن وب.",
     level: "60%",
   },
 ];

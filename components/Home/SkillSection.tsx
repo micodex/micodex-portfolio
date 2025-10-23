@@ -1,11 +1,8 @@
 "use client";
 
 import { useState } from "react";
-// import AosProvider from "../common/AosProvider";
-
 // skill card
 import SkillCard from "../ui/SkillCard";
-
 // Data
 import { skills } from "@/lib/data/skills";
 
@@ -63,10 +60,7 @@ export default function SkillSection() {
         </div>
 
         {/* render the filterd skills */}
-        <div
-          dir="ltr"
-          className="grid grid-cols-1 lg:grid-cols-3 gap-6 poppins-font"
-        >
+        <div dir="ltr" className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {filteredSkills.map((skill) => (
             <SkillCard key={skill.id} skill={skill} />
           ))}

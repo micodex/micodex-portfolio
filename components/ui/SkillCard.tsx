@@ -8,6 +8,7 @@ interface Props {
 export default function SkillCard({ skill }: Props) {
   return (
     <div
+      dir="rtl"
       data-aos="fade-in"
       className="
         p-6 rounded-lg bg-white dark:bg-gradient-to-br dark:bg-gray-900 ring
@@ -17,7 +18,9 @@ export default function SkillCard({ skill }: Props) {
     >
       <div className="flex items-center mb-4 ">
         <div
-          className={`w-12 h-12 text-2xl bg-orange-50 text-orange-500 rounded-full flex items-center justify-center mr-4`}
+          className={
+            "outline-1 dark:outline-none outline-gray-200 w-12 h-12 text-2xl bg-orange-50 text-orange-500 rounded-full flex items-center justify-center me-3"
+          }
           style={{
             backgroundColor: colors[skill.color][50],
             color: colors[skill.color][500],
@@ -27,13 +30,14 @@ export default function SkillCard({ skill }: Props) {
         >
           {skill.icon}
         </div>
-        <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
+        <h4 className="poppins-font text-lg font-semibold text-gray-800 dark:text-gray-200">
           {skill.title}
         </h4>
       </div>
-      <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
+      <p className="line-clamp-4 text-gray-600 dark:text-gray-400 text-sm mb-4">
         {skill.description}
       </p>
+      {/* --- progress bar */}
       <div
         className="w-full bg-gray-200 rounded-full overflow-hidden"
         role="progressbar"
@@ -56,7 +60,11 @@ export default function SkillCard({ skill }: Props) {
             parseInt(skill.level) > 80 ? "Expert" : "Intermediate"
           }`} // SEO:
         >
-          {parseInt(skill.level) > 80 ? "Expert" : "Intermediate"}
+          {parseInt(skill.level) > 80
+            ? "پیشرفته"
+            : parseInt(skill.level) > 50
+            ? "متوسط"
+            : "مقدماتی"}
         </span>
         <span>{skill.level}</span>
       </div>
