@@ -10,16 +10,16 @@ export default function SkillCard({ skill }: Props) {
     <div
       dir="rtl"
       data-aos="fade-in"
-      className="
+      className="relative
         p-6 rounded-lg bg-white dark:bg-gradient-to-br dark:bg-gray-900 ring
-       ring-gray-200 dark:ring-gray-800 transition-shadow shadow-2xl
-        shadow-slate-200/50 dark:shadow-none hover:shadow-sm duration-100 animate-fadeIn
+       ring-gray-200 dark:ring-gray-800 transition-colors shadow-2xl
+        shadow-slate-200/50 dark:shadow-none hover:ring-4
       "
     >
       <div className="flex items-center mb-4 ">
         <div
           className={
-            "outline-1 dark:outline-none outline-gray-200 w-12 h-12 text-2xl bg-orange-50 text-orange-500 rounded-full flex items-center justify-center me-3"
+            "w-12 h-12 text-2xl bg-orange-50 text-orange-500 rounded-full flex items-center justify-center me-3"
           }
           style={{
             backgroundColor: colors[skill.color][50],
@@ -34,12 +34,12 @@ export default function SkillCard({ skill }: Props) {
           {skill.title}
         </h4>
       </div>
-      <p className="line-clamp-4 text-gray-600 dark:text-gray-400 text-sm mb-4">
+      <p className="line-clamp-3 text-gray-600 dark:text-gray-400 text-sm mb-6">
         {skill.description}
       </p>
       {/* --- progress bar */}
       <div
-        className="w-full bg-gray-200 rounded-full overflow-hidden"
+        className="w-full bg-gray-200 dark:bg-gray-800 border-1 rounded-full overflow-hidden"
         role="progressbar"
         aria-valuenow={parseInt(skill.level)}
         aria-valuemin={0}
@@ -68,6 +68,13 @@ export default function SkillCard({ skill }: Props) {
         </span>
         <span>{skill.level}</span>
       </div>
+
+      {/* dot background */}
+      <div
+        className="absolute inset-0 h-full w-full opacity-30 
+      bg-[radial-gradient(circle,#73737350_1px,transparent_1px)] 
+      bg-[size:12px_12px] -z-4"
+      ></div>
     </div>
   );
 }
