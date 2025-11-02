@@ -12,7 +12,7 @@ export default function NotFound() {
       <div className="relative w-full sm:max-w-sm max-w-xs aspect-square">
         <Image
           className="block object-cover"
-          src="/tv.png"
+          src="/tv-404.png"
           fill={true}
           alt="404 image"
         />
