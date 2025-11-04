@@ -27,7 +27,7 @@ const socialLinks = [
   {
     id: 3,
     icon: <FaInstagram />,
-    href: "https://github.com/micodex",
+    href: "https://instagram.com/web.script",
     aria_label: "instagram profile",
   },
 ];
