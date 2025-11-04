@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import connectDB from "@/lib/mongodb";
 import Blog, { IBlog } from "@/models/blog";
-import { ChevronRight } from "lucide-react";
+import { CalendarDays, ChevronRight, User } from "lucide-react";
 
 export default async function BlogPage({
   params,
@@ -55,9 +55,15 @@ export default async function BlogPage({
                 className="object-cover"
               />
             </div>
-            <div className="mt-2 ms-2 flex gap-6 text-gray-600 dark:text-gray-400 text-xs">
-              <span>نویسنده: {blog.author}</span>
-              <span>تاریخ انتشار: {blog.date.split(",")[0]}</span>
+            <div className="mt-3 ms-2 flex gap-6 text-gray-600 dark:text-gray-400 text-xs">
+              <span>
+                <User className="inline me-1 h-4 w-4" />
+                {blog.author}
+              </span>
+              <span>
+                <CalendarDays className="inline me-1 h-4 w-4" />
+                {blog.date.split(",")}
+              </span>
             </div>
           </div>
         </div>
