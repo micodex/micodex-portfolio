@@ -1,5 +1,6 @@
 import { IProject } from "@/models/project";
 import ProjectCard from "../ui/ProjectCard";
+import { Folders } from "lucide-react";
 
 // Helper function to fetch projects
 async function getProjects(): Promise<IProject[]> {
@@ -36,7 +37,13 @@ export default async function ProjectSection() {
               id="project-section-heading"
               className="text-2xl text-gray-800 dark:text-gray-200 font-bold mb-2"
             >
-              پروژه‌ها <span aria-hidden="true">📂</span>
+              پروژه‌ها
+              <span
+                className="inline-block ms-2 text-gray-600 dark:text-gray-400"
+                aria-hidden="true"
+              >
+                <Folders />
+              </span>
             </h2>
             <h3 className="text-sm text-gray-600 dark:text-gray-400">
               یک لیست از بهترین پروژه‌های من

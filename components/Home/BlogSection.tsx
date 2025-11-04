@@ -2,6 +2,7 @@
 import { IBlog } from "@/models/blog";
 import PostCard from "../ui/PostCard";
 import Link from "next/link";
+import { Newspaper } from "lucide-react";
 
 async function getNewBlogs(): Promise<IBlog[]> {
   try {
@@ -34,7 +35,10 @@ export default async function BlogSection() {
         <header className="p-4 pt-0 mb-8 flex justify-between border-b">
           <div>
             <h2 id="blog-section-heading" className="text-2xl font-bold mb-2">
-              وبلاگ <span aria-hidden="true">📝</span>
+              وبلاگ
+              <span aria-hidden="true">
+                <Newspaper className="text-gray-600 dark:text-gray-400 inline-block ms-2" />
+              </span>
             </h2>
             <h3 className="text-sm text-gray-600">
               خبر‌های جالب رو اینجا دنبال کنید
