@@ -21,7 +21,7 @@ export default function NotFound() {
         </span>
       </div>
       <div className="relative">
-        <div className="z-0 absolute top-[2%] left-[5%] blur-3xl scale-150 opacity-40 w-84 h-33 rotate-40 rounded-full bg-cyan-400 dark:bg-cyan-950"></div>
+        <div className="z-0 absolute top-[2%] left-[5%] blur-3xl scale-150 opacity-40 w-84 h-33 rotate-40 rounded-full bg-cyan-400 dark:bg-cyan-800"></div>
         <h1 className="relative z-1 text-3xl font-bold mt-4 text-gray-800 dark:text-gray-200">
           صفحه پیدا نشد!
         </h1>
