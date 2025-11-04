@@ -54,9 +54,9 @@ export default function HeroSection() {
                   rel="noopener noreferrer" // for security
                   className="
                   flex justify-center items-center py-3 px-5 bg-gradient-to-br rounded-xl
-                from-sky-600 to-sky-300 hover:to-sky-400 text-white ring-4
+                from-sky-600 to-sky-300 hover:to-sky-400 text-white border-4
                 dark:from-gray-900 dark:to-gray-700 dark:hover:to-gray-600
-                  cursor-pointer ring-sky-300 dark:ring-gray-700
+                  cursor-pointer border-sky-300 dark:border-gray-700
                   "
                 >
                   <FaGithub size={24} className="mr-2" aria-label="GitHub" />
