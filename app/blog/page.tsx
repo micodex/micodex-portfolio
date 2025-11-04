@@ -20,7 +20,7 @@ async function getBlog(tag?: string, search?: string): Promise<IBlog[]> {
     if (search) url.searchParams.append("search", search);
 
     const res = await fetch(url.toString(), {
-      next: { revalidate: 60 },
+      cache: "no-store",
     }); // use ISR for caching posts
 
     if (!res.ok) throw new Error("Failed to fetch blog posts");
@@ -32,6 +32,7 @@ async function getBlog(tag?: string, search?: string): Promise<IBlog[]> {
     return [];
   }
 }
+
 interface BlogPageProps {
   searchParams: Promise<{
     tag?: string;
@@ -43,7 +44,15 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 
   const blogPosts = await getBlog(params?.tag, params?.search);
 
-  const allTags = ["all", "news", "programming", "ai", "tech"];
+  const allTags = [
+    "all",
+    "news",
+    "programming",
+    "ai",
+    "tech",
+    "entertainment",
+    "science",
+  ];
 
   return (
     <div className="bg-gray-50 dark:bg-gray-950 overflow-x-hidden">
