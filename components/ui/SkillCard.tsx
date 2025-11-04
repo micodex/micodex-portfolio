@@ -71,9 +71,9 @@ export default function SkillCard({ skill }: Props) {
 
       {/* dot background */}
       <div
-        className="absolute inset-0 h-full w-full opacity-30 
+        className="absolute inset-0 h-full w-full opacity-50 
       bg-[radial-gradient(circle,#73737350_1px,transparent_1px)] 
-      bg-[size:12px_12px] -z-4"
+      bg-[size:18px_18px] -z-4"
       ></div>
     </div>
   );
