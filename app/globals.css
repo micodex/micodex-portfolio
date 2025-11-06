@@ -190,9 +190,10 @@
         transform: translateY(0);
       }
     }
-    .mobile-menu-fadein {
-      -webkit-animation: menu-fadein .3s ease 1;
-      -moz-animation: menu-fadein .3s ease 1;
-      animation: menu-fadein .3s ease 1;
+    
+    .dot-background {
+      @apply absolute inset-0 h-full w-full opacity-70 
+      bg-[radial-gradient(circle,#73737350_1px,transparent_1px)] 
+      bg-[size:30px_30px]
     }
 }

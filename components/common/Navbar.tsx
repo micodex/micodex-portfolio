@@ -10,6 +10,8 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { RiGeminiLine } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
 
+import { AnimatePresence, motion } from "motion/react";
+
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
@@ -95,30 +97,37 @@ const Navbar = () => {
               )}
             </button>
           </div>
-
+          {/* mobile-menu-fadein */}
           {/* Mobile menu */}
-          {isMobileMenuOpen && (
-            <ul
-              className={`mobile-menu-fadein text-center text-lg
-                md:hidden absolute left-0 right-0 mt-14 px-6 py-12 space-y-8 rounded-xl
-                dark:bg-black/90 bg-white/90 backdrop-blur-lg ring-2 ring-sky-100 dark:ring-gray-800
-              `} // backdrop effect?
-            >
-              {links.map(({ label, href }) => (
-                <li key={label}>
-                  <Link
-                    href={href}
-                    onClick={() => closeMobileMenu()}
-                    className={`p-2 hover:text-sky-500 transition-colors ${
-                      pathname === href ? "text-sky-500 font-bold" : ""
-                    }`}
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
+          <AnimatePresence initial={false}>
+            {isMobileMenuOpen && (
+              <motion.ul
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0 }}
+                // TODO: add backdop background
+                className="
+                  text-center text-lg
+                  md:hidden absolute left-30 right-0 mt-14 px-6 py-12 space-y-8 rounded-xl
+                  dark:bg-black/90 bg-white/94 border-4 border-sky-100 dark:border-gray-800
+                  "
+              >
+                {links.map(({ label, href }) => (
+                  <li key={label}>
+                    <Link
+                      href={href}
+                      onClick={() => closeMobileMenu()}
+                      className={`p-2 hover:text-sky-500 transition-colors ${
+                        pathname === href ? "text-sky-500 font-bold" : ""
+                      }`}
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </motion.ul>
+            )}
+          </AnimatePresence>
         </div>
       </div>
     </nav>
