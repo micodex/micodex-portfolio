@@ -39,9 +39,13 @@ export default function ContactForm() {
       setName("");
       setEmail("");
       setMessage("");
-    } catch (error) {
+    } catch (err) {
       setStatus("error");
-      setErrorMessage(String(error));
+      if (err instanceof Error) {
+        setErrorMessage(err.message);
+      } else {
+        setErrorMessage("Something went wrong.");
+      }
     }
   };
 

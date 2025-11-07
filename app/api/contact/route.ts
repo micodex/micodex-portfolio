@@ -4,9 +4,19 @@ import nodemailer from "nodemailer";
 export async function POST(request: Request) {
   const { name, email, message } = await request.json();
 
+  // required fields check
   if (!name || !email || !message) {
     return NextResponse.json(
       { message: "All fields are required." },
+      { status: 400 }
+    );
+  }
+
+  // email validation
+  const emailRegex: RegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return NextResponse.json(
+      { message: "ایمیل وارد شده معتبر نیست" },
       { status: 400 }
     );
   }
