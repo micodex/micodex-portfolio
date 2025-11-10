@@ -111,7 +111,7 @@ const Footer = () => {
                   href="#"
                   className="footer-link text-gray-400 hover:text-sky-400"
                 >
-                  مشاوره
+                  اتوماسیون
                 </a>
               </li>
             </ul>

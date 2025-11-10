@@ -63,7 +63,7 @@ export default function loadingBlog() {
         <label className="block ms-4 mb-2 text-gray-600 dark:text-gray-400">
           فیلتر پست‌ها
         </label>
-        <div className="sm:h-20 h-28 rounded-xl bg-gray-200 dark:bg-gray-800 animate-pulse"></div>
+        <div className="sm:h-20 h-38 rounded-xl bg-gray-200 dark:bg-gray-800 animate-pulse"></div>
         <section
           aria-labelledby="blog-grid-heading"
           className="dark:bg-gray-950  py-20"

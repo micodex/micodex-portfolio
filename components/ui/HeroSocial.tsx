@@ -1,9 +1,10 @@
-import * as motion from "motion/react-client";
 // icons
 import { FaGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { FaCodepen } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+
+import * as motion from "motion/react-client";
 
 const socialLinks = [
   {
@@ -34,7 +35,15 @@ const socialLinks = [
 
 const HeroSocial = () => {
   return (
-    <ul className="inline-flex space-x-4 p-1 rounded-full bg-gradient-to-r text-sky-900 ring-4 ring-sky-200 dark:ring-gray-800">
+    <motion.ul
+      initial={{ scale: 0.9, skewX: 10 }}
+      animate={{
+        scale: 1,
+        skewX: 0,
+        transition: { duration: 2, ease: ["easeInOut"] },
+      }}
+      className="inline-flex space-x-4 p-1 rounded-full bg-gradient-to-r text-sky-900 ring-4 ring-sky-200 dark:ring-gray-800"
+    >
       {socialLinks.map((link) => (
         <li
           key={link.id}
@@ -52,7 +61,7 @@ const HeroSocial = () => {
           </motion.a>
         </li>
       ))}
-    </ul>
+    </motion.ul>
   );
 };
 

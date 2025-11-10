@@ -12,11 +12,6 @@ export default function ContactPage() {
   return (
     <div className="bg-gray-50 dark:bg-gray-950 overflow-x-hidden">
       <header className="relative">
-        {/* <div
-          className="absolute inset-0 h-full w-full opacity-50
-        bg-[radial-gradient(circle,#73737350_1px,transparent_1px)] 
-        bg-[size:10px_10px]"
-        ></div> */}
         <div className="pb-20 pt-40 relative section-container">
           {/* blur background */}
           <div

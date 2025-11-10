@@ -38,7 +38,7 @@ const Navbar = () => {
             relative py-5 px-6 flex justify-between rounded-full
             bg-gray-sky-50/10 dark:bg-gray-950/60
             ring-4 dark:ring-sky-200/5 ring-sky-200/50 backdrop-blur-lg
-           "
+          "
         >
           {/* logo */}
           <Link
@@ -97,7 +97,7 @@ const Navbar = () => {
               )}
             </button>
           </div>
-          {/* mobile-menu-fadein */}
+
           {/* Mobile menu */}
           <AnimatePresence initial={false}>
             {isMobileMenuOpen && (
@@ -105,7 +105,7 @@ const Navbar = () => {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
-                // TODO: add backdop background
+                // TODO: add backdop blur background
                 className="
                   text-center text-lg
                   md:hidden absolute left-30 right-0 mt-14 px-6 py-12 space-y-8 rounded-xl

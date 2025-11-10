@@ -29,12 +29,20 @@ export default function HeroSection() {
         <div className="lg:flex gap-10 pb-20 pt-40">
           <div className="flex flex-col">
             <div className="z-1 px-6 py-6 rounded-xl bg-sky-100/30 dark:bg-gray-800/20 ring-2 dark:ring-gray-800 ring-sky-200">
-              <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-200 ">
+              <motion.h1
+                initial={{ x: -20 }}
+                animate={{ x: 0, transition: { duration: 3, type: "spring" } }}
+                className="text-4xl font-bold text-gray-800 dark:text-gray-200 "
+              >
                 سلام <span aria-hidden="true">👋</span> من میلاد هستم
-              </h1>
-              <h2 className="mt-2 text-2xl font-normal bg-gradient-to-r from-sky-600 to-indigo-400 bg-clip-text text-transparent">
+              </motion.h1>
+              <motion.h2
+                initial={{ x: -20 }}
+                animate={{ x: 0, transition: { duration: 4, type: "spring" } }}
+                className="mt-2 text-2xl font-normal bg-gradient-to-r from-sky-600 to-indigo-400 bg-clip-text text-transparent"
+              >
                 یک توسعه دهنده وب
-              </h2>
+              </motion.h2>
               <p className="mt-6 text-md text-gray-700 dark:text-gray-400 max-w-150">
                 تمرکز من روی طراحی تمیز و تجربه کاربری هوشمنده و با استفاده از
                 تکنولوژی‌های مدرن اپلیکیشن‌هایی می‌سازم که هم زیبا باشن و هم

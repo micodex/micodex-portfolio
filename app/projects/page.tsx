@@ -64,7 +64,7 @@ export default async function projectsPage() {
 
       <nav className="section-container" aria-label="Blog Post Filters">
         <label className="block ms-4 mb-2 text-gray-600 dark:text-gray-400">
-          فیلتر پروژه‌ها
+          فیلتر پروژه‌ها (در حال توسعه...)
         </label>
         <div className="lg:flex justify-between px-4 py-4 border rounded-xl">
           <div className="content-center flex flex-wrap gap-3 mb-4 lg:mb-0">
@@ -92,6 +92,7 @@ export default async function projectsPage() {
 
       <section ria-labelledby="projects-heading">
         <div className="section-container py-20">
+          {/* TODO: add header */}
           {/* <header className="px-4 mb-8">
             <h2
               id="projects-heading"

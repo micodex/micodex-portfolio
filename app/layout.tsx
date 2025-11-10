@@ -1,7 +1,6 @@
 // style
 import "./globals.css";
 // fonts
-
 import { Vazirmatn, Poppins } from "next/font/google";
 
 const vazirmatn = Vazirmatn({
@@ -34,7 +33,6 @@ import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
 
 import { ThemeProvider } from "@/context/ThemeContext";
-import AosProvider from "@/components/common/AosProvider";
 
 export default function RootLayout({
   children,
@@ -46,17 +44,15 @@ export default function RootLayout({
       <body
         className={`${vazirmatn.className} ${poppins.variable} antialiased`}
       >
-        <AosProvider>
-          <ThemeProvider>
-            <header>
-              <Navbar />
-            </header>
-          </ThemeProvider>
+        <ThemeProvider>
+          <header>
+            <Navbar />
+          </header>
+        </ThemeProvider>
 
-          <main>{children}</main>
+        <main>{children}</main>
 
-          <Footer />
-        </AosProvider>
+        <Footer />
       </body>
     </html>
   );
