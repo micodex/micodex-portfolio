@@ -8,8 +8,8 @@ export default function ProjectCard({ project }: { project: IProject }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1, transition: { duration: 1 } }}
-      viewport={{ amount: 0.5 }}
+      whileInView={{ opacity: 1, transition: { duration: 1.3 } }}
+      viewport={{ margin: "-90px" }}
     >
       <article className="p-4 bg-white dark:bg-gray-900 shadow-2xl shadow-slate-200/50 dark:shadow-none hover:shadow-sm transition-shadow duration-100 ring-2 ring-gray-100  dark:ring-gray-800 rounded-md overflow-hidden">
         {/* card image */}

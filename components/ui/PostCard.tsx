@@ -9,8 +9,8 @@ export default function PostCard({ blog }: { blog: IBlog }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1, transition: { duration: 1 } }}
-      viewport={{ margin: "-120px" }}
+      whileInView={{ opacity: 1, transition: { duration: 1.3 } }}
+      viewport={{ margin: "-90px" }}
     >
       <article className="p-4 flex gap-4 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-lg hover:shadow-sm shadow-gray-100 dark:shadow-none transition-shadow duration-100">
         {/* post image*/}

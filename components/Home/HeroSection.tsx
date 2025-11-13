@@ -32,14 +32,14 @@ export default function HeroSection() {
               <motion.h1
                 initial={{ x: -20 }}
                 animate={{ x: 0, transition: { duration: 3, type: "spring" } }}
-                className="text-4xl font-bold text-gray-800 dark:text-gray-200 "
+                className="text-3xl sm:text-4xl font-bold text-gray-800 dark:text-gray-200 "
               >
-                سلام <span aria-hidden="true">👋</span> من میلاد هستم
+                سلام <span aria-hidden="true">👋</span> میلاد هستم
               </motion.h1>
               <motion.h2
                 initial={{ x: -20 }}
                 animate={{ x: 0, transition: { duration: 4, type: "spring" } }}
-                className="mt-2 text-2xl font-normal bg-gradient-to-r from-sky-600 to-indigo-400 bg-clip-text text-transparent"
+                className="mt-2 text-xl sm:text-2xl font-normal bg-gradient-to-r from-sky-600 to-indigo-400 bg-clip-text text-transparent"
               >
                 یک توسعه دهنده وب
               </motion.h2>
