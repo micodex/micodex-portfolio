@@ -2,7 +2,6 @@
 import { IBlog } from "@/models/blog";
 import PostCard from "../ui/PostCard";
 import Link from "next/link";
-import { Newspaper } from "lucide-react";
 
 async function getNewBlogs(): Promise<IBlog[]> {
   try {

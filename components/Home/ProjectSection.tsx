@@ -1,6 +1,5 @@
 import { IProject } from "@/models/project";
 import ProjectCard from "../ui/ProjectCard";
-import { Folders } from "lucide-react";
 
 // Helper function to fetch projects
 async function getProjects(): Promise<IProject[]> {
