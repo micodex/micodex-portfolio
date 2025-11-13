@@ -36,9 +36,6 @@ export default async function BlogSection() {
           <div>
             <h2 id="blog-section-heading" className="text-2xl font-bold mb-2">
               وبلاگ
-              <span aria-hidden="true">
-                <Newspaper className="text-gray-600 dark:text-gray-400 inline-block ms-2" />
-              </span>
             </h2>
             <h3 className="text-sm text-gray-600">
               خبر‌های جالب رو اینجا دنبال کنید

@@ -38,12 +38,6 @@ export default async function ProjectSection() {
               className="text-2xl text-gray-800 dark:text-gray-200 font-bold mb-2"
             >
               پروژه‌ها
-              <span
-                className="inline-block ms-2 text-gray-600 dark:text-gray-400"
-                aria-hidden="true"
-              >
-                <Folders />
-              </span>
             </h2>
             <h3 className="text-sm text-gray-600 dark:text-gray-400">
               یک لیست از بهترین پروژه‌های من
