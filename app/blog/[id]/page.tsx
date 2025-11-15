@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import connectDB from "@/lib/mongodb";
 import Blog, { IBlog } from "@/models/blog";
+import ReactMarkdown from "react-markdown";
 import { CalendarDays, ChevronRight, User } from "lucide-react";
-
 export default async function BlogPage({
   params,
 }: {
@@ -33,47 +33,47 @@ export default async function BlogPage({
   }
 
   return (
-    <section className="bg-[#FCFAF6] dark:bg-gray-950">
-      <article className="">
-        <div className="bg-gray-100 dark:bg-gray-900 px-0 pt-30 pb-10">
-          {/* post header */}
-          <div className="max-w-[768px] mx-auto px-4 text-gray-600 dark:text-gray-400">
+    <article className="bg-[#FCFAF6] dark:bg-gray-950">
+      <div className="bg-gray-100 dark:bg-gray-900 px-0 pt-30 pb-10">
+        {/* post header */}
+        <header className="max-w-[768px] mx-auto px-4 text-gray-600 dark:text-gray-400">
+          <Link className="" href="/blog">
             <div className="mb-8 inline-flex gap-1 px-4 py-2 text-sm rounded-full bg-gray-200 hover:bg-gray-300 dark:hover:bg-gray-800 dark:bg-gray-950 transition-colors active:scale-90">
-              <ChevronRight className="w-5 h-5" />
-              <Link className="" href="/blog">
-                بازگشت به وبلاگ
-              </Link>
+              <ChevronRight className="w-5 h-5" aria-hidden="true" />
+              بازگشت به وبلاگ
             </div>
-            <h1 className="mb-8 text-xl sm:text-3xl font-bold text-gray-800 dark:text-gray-200">
-              {blog.title}
-            </h1>
-            <div className="px-0 relative aspect-16/9 border rounded-lg overflow-hidden">
-              <Image
-                src={blog.src}
-                alt={blog.title}
-                fill={true}
-                className="object-cover"
-              />
-            </div>
-            <div className="mt-3 ms-2 flex gap-6 text-gray-600 dark:text-gray-400 text-xs">
-              <span>
-                <User className="inline me-1 h-4 w-4" />
-                {blog.author}
-              </span>
-              <span>
-                <CalendarDays className="inline me-1 h-4 w-4" />
-                {blog.date.split(",")}
-              </span>
-            </div>
+          </Link>
+          <h1 className="mb-8 text-xl sm:text-3xl font-bold text-gray-800 dark:text-gray-200">
+            {blog.title}
+          </h1>
+          <div className="px-0 relative aspect-16/9 border rounded-lg overflow-hidden">
+            <Image
+              src={blog.src}
+              alt={blog.title}
+              fill={true}
+              className="object-cover"
+              priority
+            />
           </div>
+          <div className="mt-3 ms-2 flex gap-6 text-gray-600 dark:text-gray-400 text-xs">
+            <span>
+              <User className="inline me-1 h-4 w-4" />
+              {blog.author}
+            </span>
+            <time>
+              <CalendarDays className="inline me-1 h-4 w-4" />
+              {blog.date.split(",")[0]}
+            </time>
+          </div>
+        </header>
+      </div>
+
+      {/* post content */}
+      <div className="mt-10 max-w-[768px] mx-auto px-4 pb-20">
+        <div className="text-lg text-gray-600 dark:text-gray-400 space-y-4">
+          <ReactMarkdown>{blog.content}</ReactMarkdown>
         </div>
-        {/* post content */}
-        <div className="mt-10 max-w-[768px] mx-auto px-4 pb-20">
-          <p className="text-lg text-gray-600 dark:text-gray-400">
-            {blog.content}
-          </p>
-        </div>
-      </article>
-    </section>
+      </div>
+    </article>
   );
 }
