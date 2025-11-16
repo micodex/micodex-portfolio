@@ -4,6 +4,7 @@ import connectDB from "@/lib/mongodb";
 import Blog, { IBlog } from "@/models/blog";
 import ReactMarkdown from "react-markdown";
 import { CalendarDays, ChevronRight, User } from "lucide-react";
+
 export default async function BlogPage({
   params,
 }: {
@@ -22,7 +23,7 @@ export default async function BlogPage({
             بلاگ پست پیدا نشد
           </h1>
           <Link
-            className="font-medium  hover:text-sky-500 underline-offset-7 hover:underline"
+            className="font-medium hover:text-sky-500 underline-offset-7 hover:underline"
             href="/blog"
           >
             بازگشت به وبلاگ
@@ -32,8 +33,9 @@ export default async function BlogPage({
     );
   }
 
+  // bg-[#FCFAF6]
   return (
-    <article className="bg-[#FCFAF6] dark:bg-gray-950">
+    <article className="bg-gray-50 dark:bg-gray-950">
       <div className="bg-gray-100 dark:bg-gray-900 px-0 pt-30 pb-10">
         {/* post header */}
         <header className="max-w-[768px] mx-auto px-4 text-gray-600 dark:text-gray-400">
@@ -70,7 +72,8 @@ export default async function BlogPage({
 
       {/* post content */}
       <div className="mt-10 max-w-[768px] mx-auto px-4 pb-20">
-        <div className="text-lg text-gray-600 dark:text-gray-400 space-y-4">
+        {/* tailwind typography:prose class */}
+        <div className="prose prose-lg dark:prose-invert text-justify">
           <ReactMarkdown>{blog.content}</ReactMarkdown>
         </div>
       </div>
