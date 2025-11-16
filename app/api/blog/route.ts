@@ -11,7 +11,10 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const tag = searchParams.get("tag");
     const search = searchParams.get("search");
+    const limit = Number(searchParams.get("limit") || 0);
+
     console.log("Query Parameters:", { tag, search });
+
     // Build MongoDB query
     const query: Record<string, unknown> = {};
 
@@ -27,13 +30,14 @@ export async function GET(request: Request) {
         { content: { $regex: search, $options: "i" } }, // Case-insensitive search on content
       ];
     }
+
     // Log the query for debugging
     console.log("MongoDB Query:", query);
 
     // Fetch filtered blog posts, sorted by newest first
     // TODO: fix sort
     const blogPosts = (
-      await Blog.find(query).sort({ createdAt: -1 })
+      await Blog.find(query).sort({ createdAt: -1 }).limit(limit)
     ).reverse();
 
     return NextResponse.json({ success: true, data: blogPosts });
