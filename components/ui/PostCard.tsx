@@ -8,8 +8,8 @@ import * as motion from "motion/react-client";
 export default function PostCard({ blog }: { blog: IBlog }) {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1, transition: { duration: 1.3 } }}
+      initial={{ opacity: 0.05 }}
+      whileInView={{ opacity: 1, transition: { duration: 1.1 } }}
       viewport={{ margin: "-90px" }}
     >
       <article className="p-4 flex gap-4 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-lg hover:shadow-sm shadow-gray-100 dark:shadow-none transition-shadow duration-100">

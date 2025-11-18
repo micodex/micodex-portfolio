@@ -10,9 +10,9 @@ interface Props {
 export default function SkillCard({ skill }: Props) {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1, transition: { duration: 1 } }}
-      viewport={{ amount: 0.5 }}
+      initial={{ opacity: 0.05 }}
+      whileInView={{ opacity: 1, transition: { duration: 1.3 } }}
+      viewport={{ margin: "-90px" }}
     >
       <div
         dir="rtl"
