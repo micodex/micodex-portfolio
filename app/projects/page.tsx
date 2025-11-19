@@ -5,7 +5,7 @@ import { IProject } from "@/models/project";
 // Metadata
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "micodex | projects",
+  title: "پروژه‌ها | micodex",
   description:
     "Explore my portfolio: full-stack apps built with modern tech stacks. Clean code, great UX, and scalable architecture.",
 };

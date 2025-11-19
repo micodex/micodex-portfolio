@@ -2,6 +2,7 @@ import mongoose, { Schema, Document } from "mongoose";
 
 // 1. Define the TypeScript interface for your Project data
 export interface IProject extends Document {
+  content: string;
   title: string;
   description: string;
   src: string;
@@ -42,6 +43,9 @@ const ProjectSchema: Schema = new Schema(
     projectUrl: {
       type: String,
       required: [true, "Please provide the live project URL."],
+    },
+    content: {
+      type: String,
     },
   },
   {
