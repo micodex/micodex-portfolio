@@ -1,9 +1,11 @@
 import ContactForm from "./ContactForm";
+import { FaWhatsapp, FaTelegram } from "react-icons/fa";
+import * as motion from "motion/react-client";
 
 // Metadata
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "micodex | contact",
+  title: "تماس | micodex",
   description:
     "Have a project in mind? Let's collaborate! Send me a message and I'll get back to you soon.",
 };
@@ -32,10 +34,46 @@ export default function ContactPage() {
               تماس بگیرید
             </p>
           </div>
+
+          {/* telegram and whatsapp contact chat links */}
+          <ul className="mt-6 flex gap-6 justify-center items-center text-4xl text-gray-700 dark:text-gray-300 cursor-pointer">
+            <motion.li
+              className="hover:text-green-500 transition-colors duration-100"
+              initial={{ scale: 0.1 }}
+              animate={{
+                scale: 1,
+                transition: { type: "spring", bounce: 0.4 },
+              }}
+              whileHover={{ scale: 1.4 }}
+              whileTap={{ scale: 0.8 }}
+            >
+              <a href="https://wa.me" target="_blank" rel="noopener noreferrer">
+                <FaWhatsapp />
+              </a>
+            </motion.li>
+            <motion.li
+              className="hover:text-sky-500 transition-colors duration-100"
+              initial={{ scale: 0.1 }}
+              animate={{
+                scale: 1,
+                transition: { type: "spring", bounce: 0.4 },
+              }}
+              whileHover={{ scale: 1.4 }}
+              whileTap={{ scale: 0.8 }}
+            >
+              <a
+                href="https://t.me/heyitsmg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaTelegram />
+              </a>
+            </motion.li>
+          </ul>
         </div>
       </header>
 
-      <section className="section-container py-20">
+      <section className="section-container pt-10 pb-20">
         {/* contact form */}
         <ContactForm />
       </section>
