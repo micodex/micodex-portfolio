@@ -19,13 +19,41 @@ const poppins = Poppins({
 
 // metadata
 import { Metadata } from "next";
+
 export const metadata: Metadata = {
-  title: "micodex | Home",
+  // global metadata
+  title: "خانه | micodex",
   description: "micodex Portfolio Website",
   keywords: ["developer", "portfolio", "react", "nextjs", "typescript"],
   authors: [{ name: "Milad" }],
   creator: "Milad",
   publisher: "Milad",
+
+  // global OG tags
+  metadataBase: new URL("https://micodex-portfolio.vercel.app"), // to resolve social images path
+
+  openGraph: {
+    title: "micodex",
+    description:
+      "پورتفولیوی یک وب‌سایت پورتفولیو مدرن ساخته‌شده با Next.js 15 و React 19",
+    url: "https://micodex-portfolio.vercel.app",
+    images: [
+      {
+        url: "/projects/project-1.jpg",
+        width: 1024,
+        height: 768,
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "micodex",
+    description:
+      "پورتفولیوی یک وب‌سایت پورتفولیو مدرن ساخته‌شده با Next.js 15 و React 19",
+    images: ["/projects/project-1.jpg"],
+  },
 };
 
 // components
