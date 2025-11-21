@@ -1,12 +1,11 @@
 import { IBlog } from "@/models/blog";
-import { Suspense } from "react";
 import PostCard from "@/components/ui/PostCard";
 import FilterControls from "@/app/blog/FilterControls";
 
 // Metadata
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "micodex | blog",
+  title: "وبلاگ | micodex",
   description:
     "Latest articles on web development, programming tips, and tech insights. Stay updated with my tutorials and thoughts.",
 };
@@ -21,7 +20,7 @@ async function getBlog(tag?: string, search?: string): Promise<IBlog[]> {
 
     const res = await fetch(url.toString(), {
       cache: "no-store",
-    }); // use ISR for caching posts
+    }); // TODO: use ISR for caching posts  next: { revalidate: 60 },
 
     if (!res.ok) throw new Error("Failed to fetch blog posts");
     const data = await res.json();
@@ -76,12 +75,6 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
               جدید‌ترین مقالات در مورد دنیای هوش‌مصنوعی و برنامه‌نویسی
             </p>
           </div>
-          {/* dotted background */}
-          {/* <div
-              className="absolute inset-0 h-full w-full opacity-16
-                bg-[radial-gradient(circle,#73737350_1px,transparent_1px)] 
-                bg-[size:10px_10px]"
-            ></div> */}
         </div>
       </header>
 
@@ -90,9 +83,8 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           فیلتر پست‌ها
         </label>
         {/* tag filter buttons */}
-        <Suspense fallback={<div>Loading filters...</div>}>
-          <FilterControls allTags={allTags} />
-        </Suspense>
+        <FilterControls allTags={allTags} />
+
         {/* blogs section*/}
         <section
           aria-labelledby="blog-grid-heading"

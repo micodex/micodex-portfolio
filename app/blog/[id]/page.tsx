@@ -4,13 +4,21 @@ import connectDB from "@/lib/mongodb";
 import Blog, { IBlog } from "@/models/blog";
 import ReactMarkdown from "react-markdown";
 import { CalendarDays, ChevronRight, User } from "lucide-react";
+import type { Metadata } from "next";
+
+// metadata
+export const metadata: Metadata = {
+  title: "پست | micodex",
+};
 
 export default async function BlogPage({
   params,
 }: {
   params: Promise<{ id: string[] }>;
 }) {
+  console.log(params);
   const { id } = await params;
+
   await connectDB();
 
   const blog = await Blog.findById(id).lean<IBlog>();
