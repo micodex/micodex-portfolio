@@ -1,6 +1,5 @@
-import { IBlog } from "@/models/blog";
-import PostCard from "@/components/ui/PostCard";
 import FilterControls from "@/app/blog/FilterControls";
+import BlogList from "./blogList";
 
 // Metadata
 import type { Metadata } from "next";
@@ -10,25 +9,26 @@ export const metadata: Metadata = {
     "Latest articles on web development, programming tips, and tech insights. Stay updated with my tutorials and thoughts.",
 };
 
-async function getBlog(tag?: string, search?: string): Promise<IBlog[]> {
+async function getBlog(tag?: string, search?: string) {
   try {
     // api API URL with optional tag and search filters
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
     const url = new URL(`${apiUrl}/api/blog`);
     if (tag && tag !== "all") url.searchParams.append("tag", tag);
     if (search) url.searchParams.append("search", search);
-
+    url.searchParams.append("page", "1");
+    url.searchParams.append("limit", "6");
     const res = await fetch(url.toString(), {
       cache: "no-store",
     }); // TODO: use ISR for caching posts  next: { revalidate: 60 },
 
     if (!res.ok) throw new Error("Failed to fetch blog posts");
-    const data = await res.json();
+    const { data, total } = await res.json();
 
-    return data.data;
+    return { posts: data, total };
   } catch (error) {
     console.log(error);
-    return [];
+    return { posts: [], total: 0 };
   }
 }
 
@@ -41,7 +41,10 @@ interface BlogPageProps {
 export default async function BlogPage({ searchParams }: BlogPageProps) {
   const params = await searchParams;
 
-  const blogPosts = await getBlog(params?.tag, params?.search);
+  const { posts: initialPosts, total } = await getBlog(
+    params?.tag,
+    params?.search
+  );
 
   const allTags = [
     "all",
@@ -86,19 +89,12 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         <FilterControls allTags={allTags} />
 
         {/* blogs section*/}
-        <section
-          aria-labelledby="blog-grid-heading"
-          className="dark:bg-gray-950  py-20"
-        >
-          <h2 id="blog-grid-heading" className="sr-only">
-            Blog Posts
-          </h2>
-          <div className="grid lg:grid-cols-2 grid-cols-1 gap-6">
-            {blogPosts.map((blog) => (
-              <PostCard key={String(blog._id)} blog={blog} />
-            ))}
-          </div>
-        </section>
+        <BlogList
+          initialPosts={initialPosts}
+          total={total}
+          tag={params?.tag}
+          search={params?.search}
+        />
       </div>
     </div>
   );

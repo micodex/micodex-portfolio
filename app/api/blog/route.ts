@@ -1,9 +1,9 @@
 // app/api/blog/route.ts
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 import connectDB from "@/lib/mongodb";
 import Blog from "@/models/blog";
 
-export async function GET(request: Request) {
+export async function GET(request: NextRequest) {
   await connectDB();
 
   try {
@@ -11,9 +11,10 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const tag = searchParams.get("tag");
     const search = searchParams.get("search");
+    const page = Number(searchParams.get("page") || 1);
     const limit = Number(searchParams.get("limit") || 0);
 
-    console.log("Query Parameters:", { tag, search });
+    console.log("Query Parameters -> ", { tag, search, limit, page });
 
     // Build MongoDB query
     const query: Record<string, unknown> = {};
@@ -30,17 +31,21 @@ export async function GET(request: Request) {
         { content: { $regex: search, $options: "i" } }, // Case-insensitive search on content
       ];
     }
-
     // Log the query for debugging
-    console.log("MongoDB Query:", query);
+    console.log("MongoDB Query -> ", query);
+
+    // get total count for pagination
+    const total = await Blog.countDocuments(query);
+    console.log("total Documents -> ", total);
 
     // Fetch filtered blog posts, sorted by newest first
     // TODO: fix sort
-    const blogPosts = (
-      await Blog.find(query).sort({ createdAt: -1 }).limit(limit)
-    ).reverse();
+    const blogPosts = await Blog.find(query)
+      .sort({ _id: -1 })
+      .skip((page - 1) * limit)
+      .limit(limit);
 
-    return NextResponse.json({ success: true, data: blogPosts });
+    return NextResponse.json({ success: true, data: blogPosts, total });
   } catch (error) {
     console.error(error);
     return NextResponse.json(

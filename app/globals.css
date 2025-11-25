@@ -58,17 +58,16 @@
   --color-color-2: var(--color-2);
   --color-color-1: var(--color-1);
   @keyframes rainbow {
-  0% {
-    background-position: 0%;
+    0% {
+      background-position: 0%;
     }
-  100% {
-    background-position: 200%;
+    100% {
+      background-position: 200%;
     }
   }
 }
 
-
- :root {
+:root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -125,76 +124,73 @@
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
-  
 }
 
 @layer base {
-  
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
-    @apply selection:bg-violet-600 selection:text-violet-100
+    @apply selection:bg-violet-600 selection:text-violet-100;
   }
   .section-container {
-    @apply max-w-6xl mx-auto px-4
+    @apply max-w-6xl mx-auto px-4;
   }
-} 
+}
 
 @layer components {
   .btn-card {
-    @apply py-2 px-4 bg-gradient-to-r from-sky-500 to-sky-500 hover:to-sky-300 text-white dark:from-sky-950 dark:to-sky-950 dark:hover:to-sky-900 transition cursor-pointer active:scale-90 duration-50  rounded-full flex items-center space-x-2 shadow-[0_0_50px_0px] shadow-sky-200 dark:shadow-none
+    @apply py-2 px-4 bg-gradient-to-r from-sky-500 to-sky-500 hover:to-sky-300 text-white dark:from-sky-950 dark:to-sky-950 dark:hover:to-sky-900 transition cursor-pointer active:scale-90 duration-50  rounded-full flex items-center space-x-2 shadow-[0_0_50px_0px] shadow-sky-200 dark:shadow-none;
   }
 
   .btn-primary {
-    @apply text-white bg-[#1da1f2] hover:bg-[#1da1f2]/90 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center items-center dark:focus:ring-[#1da1f2]/55 me-2
+    @apply text-white bg-[#1da1f2] hover:bg-[#1da1f2]/90 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center items-center dark:focus:ring-[#1da1f2]/55 me-2 cursor-pointer;
   }
 
   .btn-dark {
-    @apply text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 me-2
+    @apply text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 me-2;
   }
 
   .input-style {
-    @apply  px-4 py-2 w-full outline-none rounded-xl 
+    @apply px-4 py-2 w-full outline-none rounded-xl 
       border-2 border-gray-200 dark:border-gray-800
       bg-gray-100 dark:bg-gray-900  
-      focus:ring-4 focus:border-sky-400 dark:focus:border-sky-600 focus:ring-sky-100 dark:focus:ring-gray-800
-   }
+      focus:ring-4 focus:border-sky-400 dark:focus:border-sky-600 focus:ring-sky-100 dark:focus:ring-gray-800;
+  }
   .animated-background {
     background-size: 400%;
 
     -webkit-animation: animation 5s ease infinite;
     -moz-animation: animation 5s ease infinite;
     animation: animation 5s ease infinite;
+  }
+
+  @keyframes animation {
+    0%,
+    100% {
+      background-position: 0% 50%;
     }
 
-    @keyframes animation {
-      0%,
-
-      100% {
-        background-position: 0% 50%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
+    50% {
+      background-position: 100% 50%;
     }
+  }
 
-    @keyframes menu-fadein {
-      from {
-        opacity: 0;
-        transform: translateY(-8px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+  @keyframes menu-fadein {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
     }
-    
-    .dot-background {
-      @apply absolute inset-0 h-full w-full opacity-70 
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .dot-background {
+    @apply absolute inset-0 h-full w-full opacity-70 
       bg-[radial-gradient(circle,#73737350_1px,transparent_1px)] 
-      bg-[size:30px_30px]
-    }
+      bg-[size:30px_30px];
+  }
 }

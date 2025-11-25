@@ -39,6 +39,7 @@ export default function FilterControls({ allTags }: { allTags: string[] }) {
             key={tag}
             aria-pressed={currentTag === tag}
             onClick={() => handleTagClick(tag)}
+            className="cursor-pointer"
           >
             <Tag tag={tag} color={currentTag === tag ? "sky" : ""} />
           </button>
