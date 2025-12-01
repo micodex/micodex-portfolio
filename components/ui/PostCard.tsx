@@ -1,9 +1,12 @@
 import Image from "next/image";
-import { User } from "lucide-react";
-import { IBlog } from "@/models/blog";
-import Tag from "@/components/ui/Tag";
-import { CalendarDays } from "lucide-react";
+import Link from "next/link";
 import * as motion from "motion/react-client";
+
+import { Link as LinkIcon, User } from "lucide-react";
+import { IBlog } from "@/models/blog";
+import { CalendarDays } from "lucide-react";
+
+import Tag from "@/components/ui/Tag";
 
 export default function PostCard({ blog }: { blog: IBlog }) {
   return (
@@ -14,13 +17,19 @@ export default function PostCard({ blog }: { blog: IBlog }) {
     >
       <article className="p-4 flex gap-4 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-lg hover:shadow-sm shadow-gray-100 dark:shadow-none transition-shadow duration-100">
         {/* post image*/}
-        <div className="relative flex-none w-20 sm:w-44 sm:h-44 rounded-md overflow-hidden">
-          <Image
-            src={blog.src}
-            fill={true}
-            alt={`تصویر کاور برای پست: ${blog.title}`}
-            className="object-cover"
-          />
+        <div className="group relative flex-none w-20 sm:w-44 sm:h-44 rounded-md overflow-hidden">
+          <Link target="_blank" href={`/blog/${blog._id}`} className="">
+            <Image
+              src={blog.src}
+              fill={true}
+              alt={`تصویر کاور برای پست: ${blog.title}`}
+              className="object-cover group-hover:scale-108 transition-transform duration-500"
+            />
+            {/* overlay */}
+            <div className="opacity-0 hover:opacity-100 transition-opacity duration-200 ease-out absolute inset-0 flex items-center justify-center bg-sky-500/20 outline-4 outline-dashed -outline-offset-16 outline-white/80 cursor-pointer">
+              <LinkIcon size={40} className="text-white" />
+            </div>
+          </Link>
         </div>
         {/* post content */}
         <div className="flex flex-col space-y-3">
