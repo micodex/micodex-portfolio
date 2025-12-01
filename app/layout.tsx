@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "micodex",
     description:
-      "پورتفولیوی یک وب‌سایت پورتفولیو مدرن ساخته‌شده با Next.js 15 و React 19",
+      "پورتفولیوی micodex یک وب‌سایت پورتفولیو مدرن ساخته‌شده با Next.js 15 و React 19",
     url: "https://micodex-portfolio.vercel.app",
     images: [
       {
