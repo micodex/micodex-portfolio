@@ -1,4 +1,4 @@
-import FilterControls from "@/app/blog/FilterControls";
+import FilterControls from "@/app/blog/(list)/FilterControls";
 import BlogList from "./blogList";
 
 // Metadata
