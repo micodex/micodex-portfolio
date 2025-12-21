@@ -16,7 +16,7 @@ export default function ProjectCard({ project }: { project: IProject }) {
       <article className="p-4 bg-white dark:bg-gray-900 shadow-2xl shadow-slate-200/50 dark:shadow-none hover:shadow-sm transition-shadow duration-100 ring-2 ring-gray-100  dark:ring-gray-800 rounded-md overflow-hidden">
         {/* card image */}
         <div className="group relative w-full aspect-4/3 rounded-sm overflow-hidden dark:brightness-95">
-          <Link target="_blank" href={`/projects/${project._id}`}>
+          <Link href={`/projects/${project._id}`}>
             <Image
               className="group-hover:scale-104 transition-transform duration-500 object-cover w-full"
               src={project.src}

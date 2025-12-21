@@ -43,7 +43,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     );
 
   return (
-    <div className="bg-gray-50 dark:bg-stone-950">
+    <div className="bg-gray-50 dark:bg-neutral-950">
       <article className=" min-h-dvh pt-40 max-w-[768px] m-auto px-4 pb-20">
         <div className="prose prose-sm sm:prose-md md:prose-lg dark:prose-invert">
           <ReactMarkdown>{project.content}</ReactMarkdown>

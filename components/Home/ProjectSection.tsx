@@ -5,7 +5,7 @@ import ProjectCard from "../ui/ProjectCard";
 async function getProjects(): Promise<IProject[]> {
   try {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
-    const res = await fetch(`${apiUrl}/api/projects`, {
+    const res = await fetch(`${apiUrl}/api/projects?limit=3`, {
       next: { revalidate: 60 },
     }); // cach the results and refresh data every 60 seconds (ISR)
 
