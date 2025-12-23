@@ -6,7 +6,7 @@ async function getNewBlogs(): Promise<IBlog[]> {
   try {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
     const res = await fetch(`${apiUrl}/api/blog?limit=4`, {
-      cache: "no-store",
+      next: { revalidate: 60 },
     }); // cach the results and refresh data every 60 seconds (ISR)
 
     if (!res.ok) throw new Error("Faild to fetch project");
