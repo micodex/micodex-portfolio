@@ -2,12 +2,15 @@
 import type { Colors } from "@/types/skill";
 import type { Skill } from "@/types/skill";
 
-import { SiTypescript } from "react-icons/si";
-import { FaReact } from "react-icons/fa";
-import { SiExpress } from "react-icons/si";
+// icons
+import { FaReact, FaGithub } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
-import { SiNextdotjs } from "react-icons/si";
-import { SiMongodb } from "react-icons/si";
+import {
+  SiExpress,
+  SiNextdotjs,
+  SiMongodb,
+  SiTypescript,
+} from "react-icons/si";
 
 export const colors: Colors = {
   blue: {
@@ -31,6 +34,14 @@ export const colors: Colors = {
     50: "#f8fafc", // slate-50
     500: "#64748b", // slate-500
   },
+  teal: {
+    50: "#f0fdfa", // teal-50
+    500: "#10b981", // teal-500
+  },
+  violet: {
+    50: "#f5f3ff", // violet-50
+    500: "#8b5cf6", // violet-500
+  },
 };
 
 export const skills: Skill[] = [
@@ -39,10 +50,10 @@ export const skills: Skill[] = [
     type: "Front-End",
     icon: <SiTypescript />,
     color: "orange",
-    title: "TypeScript",
+    title: "TypeScript & JS",
     description:
-      "تسلط بالا بر TypeScript برای ساخت برنامه‌های مقیاس‌پذیر و قابل نگهداری با استفاده از تایپ ایستا و معماری تمیز. آشنا با ویژگی‌های مدرن ES6+، اینترفیس‌ها و Generics برای کاهش خطا و بهبود تجربه توسعه. توانایی نوشتن کدهای تمیز و قابل استفاده مجدد در پروژه‌های فرانت‌اند و بک‌اند.",
-    level: "92%",
+      "آشنایی با TypeScript برای ساخت برنامه‌های مقیاس‌پذیر و قابل نگهداری با استفاده از تایپ ایستا و معماری تمیز. آشنا با ویژگی‌های مدرن ES6+، اینترفیس‌ها و Generics برای کاهش خطا و بهبود تجربه توسعه. توانایی نوشتن کدهای تمیز و قابل استفاده مجدد در پروژه‌های فرانت‌اند و بک‌اند.",
+    level: "70%",
   },
   {
     id: 2,
@@ -52,27 +63,27 @@ export const skills: Skill[] = [
     title: "React.js",
     description:
       "تجربه در ساخت رابط‌های کاربری پویا و بهینه با استفاده از هوک‌ها. مهارت در مدیریت state پیچیده با Context API و طراحی کامپوننت محور. تمرکز بر نوشتن کدهای ماژولار و بهینه‌سازی عملکرد رندرینگ برای تجربه کاربری سریع و روان.",
-    level: "70%",
+    level: "60%",
   },
   {
     id: 3,
     type: "Back-End",
     icon: <SiExpress />,
-    color: "green",
+    color: "teal",
     title: "Express",
     description:
-      "تسلط بر توسعه APIهای RESTful و اپلیکیشن‌های سمت سرور با Express.js. آشنا با پیاده‌سازی middleware، routing و سیستم‌های احراز هویت برای ساخت بک‌اند مقیاس‌پذیر. تمرکز بر ایجاد منطق سرور امن، کارا و مستند.",
-    level: "60%",
+      "توسعه API های RESTful و اپلیکیشن‌های سمت سرور با Express.js. آشنا با پیاده‌سازی middleware، routing و سیستم‌های احراز هویت برای ساخت بک‌اند مقیاس‌پذیر. تمرکز بر ایجاد منطق سرور امن، کارا و مستند.",
+    level: "25%",
   },
   {
     id: 4,
     type: "Front-End",
     icon: <RiTailwindCssFill />,
     color: "pink",
-    title: "Tailwind CSS",
+    title: "Tailwind & CSS",
     description:
-      "مهارت بالا در طراحی رابط‌های واکنش‌گرا و مدرن با استفاده از Tailwind CSS و رویکرد utility-first. توانایی ساخت سیستم‌های طراحی منسجم و بهینه‌سازی عملکرد CSS. تمرکز بر ارائه رابط‌های زیبا، سبک و سازگار با موبایل.",
-    level: "98%",
+      "مهارت در طراحی رابط‌های واکنش‌گرا و مدرن با استفاده از Tailwind CSS و رویکرد utility-first. توانایی ساخت سیستم‌های طراحی منسجم و بهینه‌سازی عملکرد CSS. تمرکز بر ارائه رابط‌های زیبا، سبک و سازگار با موبایل.",
+    level: "90%",
   },
   {
     id: 5,
@@ -81,7 +92,7 @@ export const skills: Skill[] = [
     color: "green",
     title: "MongoDB",
     description:
-      "توانایی طراحی ساختارهای NoSQL منعطف و بهینه برای عملکرد بالا در MongoDB. آشنا با کوئری‌های پیچیده، ایندکس‌گذاری و پایپ‌لاین‌های aggregation. تمرکز بر حفظ یکپارچگی داده‌ها و ساخت دیتابیس‌های کارآمد برای پروژه‌های واقعی.",
+      "توانایی طراحی ساختارهای NoSQL منعطف و بهینه در MongoDB. آشنا با کوئری‌ها ، ایندکس‌گذاری. تمرکز بر حفظ یکپارچگی داده‌ها و ساخت دیتابیس‌های کارآمد برای پروژه‌های واقعی.",
     level: "30%",
   },
   {
@@ -91,7 +102,17 @@ export const skills: Skill[] = [
     color: "slate",
     title: "Next.js",
     description:
-      "تسلط بر توسعه اپلیکیشن‌های فول‌استک با Next.js با بهره‌گیری از قابلیت‌های SSR و SSG برای بهبود عملکرد و سئو. آشنا با پیاده‌سازی dynamic routing،  API Routes و بهینه‌سازی رندر سمت سرور. تمرکز بر ساخت ساختارهای تمیز، مقیاس‌پذیر و حرفه‌ای برای پروژه‌های مدرن وب.",
-    level: "60%",
+      "تسلط بر توسعه اپلیکیشن‌های فول‌استک با Next.js با بهره‌گیری از قابلیت‌های SSR و SSG برای بهبود عملکرد و سئو. آشنا با پیاده‌سازی dynamic routing،  API Routes و بهینه‌سازی رندر سمت سرور. تمرکز بر ساخت ساختارهای تمیز، مقیاس‌پذیر برای پروژه‌های مدرن وب.",
+    level: "55%",
+  },
+  {
+    id: 7,
+    type: "Tools",
+    icon: <FaGithub />,
+    color: "violet",
+    title: "Git & github",
+    description:
+      "توانایی کار با GitHub برای اشتراک‌گذاری پروژه‌ها و همکاری تیمی. تجربه در ایجاد و استفاده از Branchها و Pull Requestها. استفاده از امکانات پایه GitHub مثل Issues برای پیگیری وظایف.",
+    level: "50%",
   },
 ];

@@ -16,9 +16,10 @@ export default function SkillSection() {
       : skills.filter((skill) => skill.type === activeFilter);
 
   const filterButtons = [
-    { filter: "All Skills", name: "همه مهارت‌ها" },
+    { filter: "All Skills", name: "همه" },
     { filter: "Front-End", name: "فرانت-اند " },
     { filter: "Back-End", name: "بک-اند " },
+    { filter: "Tools", name: "ابزار" },
   ];
 
   return (
@@ -42,7 +43,7 @@ export default function SkillSection() {
         </div>
 
         {/* skill filter buttons */}
-        <div className="flex justify-center space-x-3 mb-8">
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
           {filterButtons.map((item) => (
             <button
               onClick={() => setActiveFilter(item.filter)}

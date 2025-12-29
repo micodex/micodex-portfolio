@@ -9,7 +9,14 @@ export interface Blog {
   content: string;
 }
 
-type ColorKey = "blue" | "green" | "orange" | "pink" | "slate";
+type ColorKey =
+  | "blue"
+  | "green"
+  | "orange"
+  | "pink"
+  | "slate"
+  | "violet"
+  | "teal";
 type ColorShades = {
   50: string;
   500: string;
