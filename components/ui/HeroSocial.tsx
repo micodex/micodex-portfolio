@@ -35,15 +35,7 @@ const socialLinks = [
 
 const HeroSocial = () => {
   return (
-    <motion.ul
-      initial={{ scale: 0.8, skewX: 10 }}
-      animate={{
-        scale: 1,
-        skewX: 0,
-        transition: { duration: 2, ease: ["easeInOut"] },
-      }}
-      className="inline-flex gap-6 p-2 rounded-full bg-gradient-to-r text-sky-900 ring-4 ring-sky-200 dark:ring-gray-800"
-    >
+    <ul className="inline-flex gap-6 p-2 rounded-full bg-gradient-to-r text-sky-900 ring-4 ring-sky-200 dark:ring-gray-800">
       {socialLinks.map(({ id, href, aria_label, icon: Icon }) => (
         <motion.li
           whileHover={{ scale: 1.5 }}
@@ -61,7 +53,7 @@ const HeroSocial = () => {
           </motion.a>
         </motion.li>
       ))}
-    </motion.ul>
+    </ul>
   );
 };
 

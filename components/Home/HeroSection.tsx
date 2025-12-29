@@ -1,5 +1,8 @@
 import "@/styles/custom.css";
+
 import { FaGithub } from "react-icons/fa";
+import { Download } from "lucide-react";
+
 import * as motion from "motion/react-client";
 
 // components
@@ -15,11 +18,6 @@ export default function HeroSection() {
       {/* grid background */}
 
       <div className="section-container">
-        {/* <div
-          className="absolute z-0 inset-0 h-full w-full 
-        bg-[linear-gradient(to_right,#73737320_1px,transparent_1px),linear-gradient(to_bottom,#73737320_1px,transparent_1px)] 
-        bg-[size:50px_50px] opacity-40"
-        /> */}
         <div
           className="absolute inset-0 h-full w-full opacity-70
             bg-[radial-gradient(circle,#73737350_1px,transparent_1px)] 
@@ -28,6 +26,7 @@ export default function HeroSection() {
 
         <div className="lg:flex gap-10 pb-20 pt-40">
           <div className="flex flex-col">
+            {/* ABOUT ME card */}
             <div className="z-1 px-6 py-6 rounded-xl bg-sky-100/30 dark:bg-gray-800/20 ring-2 dark:ring-gray-800 ring-sky-200">
               <motion.h1
                 initial={{ x: -20 }}
@@ -44,14 +43,13 @@ export default function HeroSection() {
                 یک توسعه دهنده وب
               </motion.h2>
               <p className="mt-6 text-md text-gray-700 dark:text-gray-400 max-w-150">
-                تمرکز من روی طراحی تمیز و تجربه کاربری هوشمنده و با استفاده از
-                تکنولوژی‌های مدرن اپلیکیشن‌هایی می‌سازم که هم زیبا باشن و هم
-                سریع. من به جزئیات توجه زیادی دارم، چون معتقدم هر پیکسل و هر خط
-                کد می‌تونه تجربه کاربر رو تغییر بده. هدفم ساخت محصولاتی‌ست که
-                نه‌تنها درست کار کنن، بلکه حس خوبی به کاربر بدن.
+                برنامه‌نویس فرانت‌اند با تمرکز بر React ، Next.js علاقه‌مند به
+                ساخت رابط‌های کاربری مدرن، سریع و مقیاس‌پذیر و داشبورد‌های
+                تعاملی. طراحی UI/UX و اتصال فرانت‌اند به APIها. علاقه‌مند به
+                ساخت پروژه‌های واقعی و نوشتن کد تمیز و قابل نگهداری.
               </p>
 
-              {/* CTA button */}
+              {/* -- CTA button */}
               <div className="flex gap-4 mt-6">
                 <motion.a
                   whileTap={{ scale: 0.9 }}
@@ -72,12 +70,24 @@ export default function HeroSection() {
                 </motion.a>
               </div>
             </div>
-            <div className="z-1 lg:mt-20 lg:mx-0 mt-8 mx-auto">
+
+            {/* social links and resume donwnload button */}
+            <div className="z-1 flex flex-col sm:flex-row gap-8 items-center lg:mt-20 lg:mx-0 mt-8 mx-auto">
               <HeroSocial />
+
+              <a
+                href="/milad-gharibi-resume.pdf"
+                download
+                className="flex gap-4 items-center text-sky-900 dark:text-gray-100 p-5 rounded-full ring-4 ring-sky-200 dark:ring-gray-800 hover:bg-sky-100 dark:hover:bg-gray-800 transition-colors active:scale-90"
+              >
+                <span>دانلود رزومه</span>
+                <Download />
+              </a>
             </div>
           </div>
+
+          {/* hero terminal component */}
           <div className="flex-grow hidden lg:block">
-            {/* <HeroCode /> */}
             <HeroTerminal />
           </div>
         </div>
