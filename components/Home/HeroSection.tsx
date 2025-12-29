@@ -8,6 +8,7 @@ import * as motion from "motion/react-client";
 // components
 import HeroSocial from "../ui/HeroSocial";
 import HeroTerminal from "../ui/HeroTerminal";
+import ResumeButton from "../ui/ResumeButton";
 
 export default function HeroSection() {
   return (
@@ -15,9 +16,8 @@ export default function HeroSection() {
       aria-labelledby="hero-heading"
       className="relative bg-sky-50 dark:bg-gray-900"
     >
-      {/* grid background */}
-
       <div className="section-container">
+        {/* dot background */}
         <div
           className="absolute inset-0 h-full w-full opacity-70
             bg-[radial-gradient(circle,#73737350_1px,transparent_1px)] 
@@ -75,14 +75,8 @@ export default function HeroSection() {
             <div className="z-1 flex flex-col sm:flex-row gap-8 items-center lg:mt-20 lg:mx-0 mt-8 mx-auto">
               <HeroSocial />
 
-              <a
-                href="/milad-gharibi-resume.pdf"
-                download
-                className="flex gap-4 items-center text-sky-900 dark:text-gray-100 p-5 rounded-full ring-4 ring-sky-200 dark:ring-gray-800 hover:bg-sky-100 dark:hover:bg-gray-800 transition-colors active:scale-90"
-              >
-                <span>دانلود رزومه</span>
-                <Download />
-              </a>
+              {/* - download button */}
+              <ResumeButton />
             </div>
           </div>
 
