@@ -24,8 +24,8 @@ export default function ProjectCard({ project }: { project: IProject }) {
               fill={true}
             ></Image>
             {/* overlay */}
-            <div className="opacity-0 hover:opacity-100 transition-opacity duration-200 ease-out absolute inset-0 flex items-center justify-center bg-sky-500/20 outline-4 outline-dashed -outline-offset-16 outline-white/80">
-              <LinkIcon size={40} className="text-white" />
+            <div className="opacity-0 hover:opacity-100 transition-opacity duration-200 ease-out absolute inset-0 flex items-center justify-center bg-sky-200/20">
+              <LinkIcon size={40} className="text-sky-300" />
             </div>
           </Link>
         </div>
