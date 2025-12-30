@@ -9,10 +9,13 @@ const ResumeButton = () => {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleClick = () => {
+    if (downloaded) return;
+
     setDownloaded(true);
+    // reset state
     setTimeout(() => {
       setDownloaded(false);
-    }, 2500);
+    }, 3000);
   };
 
   // cleanup function
@@ -24,10 +27,17 @@ const ResumeButton = () => {
     };
   }, []);
 
+  // animations
+  const iconVariants = {
+    initial: { scale: 1, rotate: 0 },
+    animate: { scale: 1.2, rotate: 360 },
+    reset: { scale: 1, rotate: 0 },
+  };
+
   return (
     <motion.a
+      download
       href="/milad-gharibi-resume.pdf"
-      target="_blank"
       whileTap={{ scale: 0.95 }}
       onClick={handleClick}
       className="flex justify-center items-center gap-4 text-sky-900 dark:text-gray-100
@@ -35,11 +45,17 @@ const ResumeButton = () => {
         dark:hover:bg-gray-800 transition-colors active:scale-96 cursor-pointer group"
     >
       <span>دانلود رزومه</span>
-      {downloaded ? (
-        <CheckCircle className="text-teal-400" />
-      ) : (
-        <Download className="group-hover:text-sky-500 transition-colors" />
-      )}
+      <motion.div
+        variants={iconVariants}
+        animate={downloaded ? "animate" : "reset"}
+        transition={{ type: "spring", duration: 0.6 }}
+      >
+        {downloaded ? (
+          <CheckCircle className="text-teal-400" />
+        ) : (
+          <Download className="group-hover:text-sky-500 transition-colors" />
+        )}
+      </motion.div>
     </motion.a>
   );
 };
