@@ -10,7 +10,7 @@ export default function ProjectCard({ project }: { project: IProject }) {
   return (
     <motion.div
       initial={{ opacity: 0.05 }}
-      whileInView={{ opacity: 1, transition: { duration: 1.1 } }}
+      whileInView={{ opacity: 1, transition: { duration: 1.3 } }}
       viewport={{ margin: "-90px" }}
     >
       <article className="p-4 bg-white dark:bg-gray-900 shadow-2xl shadow-slate-200/50 dark:shadow-none hover:shadow-sm transition-shadow duration-100 ring-2 ring-gray-100  dark:ring-gray-800 rounded-md overflow-hidden">
@@ -43,7 +43,10 @@ export default function ProjectCard({ project }: { project: IProject }) {
             ))}
           </div>
           <div className="mt-4 flex justify-between items-center">
-            <a
+            {/* github button */}
+            <motion.a
+              whileHover={{ scale: 1.1, rotate: 1 }}
+              whileTap={{ scale: 1 }}
               target="_blank"
               rel="noopener noreferrer" // for security
               href={project.githubUrl}
@@ -51,7 +54,8 @@ export default function ProjectCard({ project }: { project: IProject }) {
             >
               <FaGithub aria-hidden="true" />
               <span className="text-sm">سورس</span>
-            </a>
+            </motion.a>
+            {/* preview link */}
             <a
               className="text-sm text-sky-500 hover:underline decoration-2"
               target="_blank"

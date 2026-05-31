@@ -25,6 +25,5 @@ export function proxy(request: NextRequest) {
 
 // Only run middleware on specific paths
 export const config = {
-  // matches /admin but NOT /admin/login ( to solve redirect error)
   matcher: ["/admin/:path*", "/api/admin/:path*"],
 };

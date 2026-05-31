@@ -43,7 +43,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 
   const { posts: initialPosts, total } = await getBlog(
     params?.tag,
-    params?.search
+    params?.search,
   );
 
   const allTags = [

@@ -59,7 +59,7 @@ export default function BlogList({
   };
 
   return (
-    <section aria-labelledby="blog-grid-heading" className="py-10">
+    <section aria-labelledby="blog-grid-heading" className="py-10 min-h-[50vh]">
       <h2 id="blog-grid-heading" className="sr-only">
         Blog Posts
       </h2>
