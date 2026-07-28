@@ -1,4 +1,4 @@
-## 🌐 پورتفولیوی micodex
+## 🌐 پورتفولیو micodex
 
 یک وب‌سایت پورتفولیو مدرن ساخته‌شده با **Next.js 15** و **React 19**، شامل صفحات:  
 `خانه` • `پروژه‌ها` • `وبلاگ` • `تماس`
@@ -96,12 +96,10 @@ npm run dev
 ## 🔗 API ها
 
 - **GET /api/blog**: دریافت لیست پست‌ها با فیلتر اختیاری
-
   - پارامترها: `tag=frontend|backend|...`، `search=کلمه`
   - خروجی: `{ success: true, data: Blog[] }`
 
 - **GET /api/projects**: دریافت لیست پروژه‌ها (مرتب شده از جدید به قدیم)
-
   - خروجی: `{ success: true, data: Project[] }`
 
 - **POST /api/contact**: ارسال پیام تماس با بدنه JSON
