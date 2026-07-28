@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import connectDB from "@/lib/mongodb";
-import Blog, { IBlog } from "@/models/blog";
+import Blog, { IPost } from "@/models/post";
 import ReactMarkdown from "react-markdown";
 import { CalendarDays, ChevronRight, User } from "lucide-react";
 import type { Metadata } from "next";
@@ -21,7 +21,7 @@ export default async function BlogPage({
 
   await connectDB();
 
-  const blog = await Blog.findById(id).lean<IBlog>();
+  const blog = await Blog.findById(id).lean<IPost>();
 
   if (!blog) {
     return (

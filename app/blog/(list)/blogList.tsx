@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { IBlog } from "@/models/blog";
+import { IPost } from "@/models/post";
 import PostCard from "@/components/ui/PostCard";
 
 interface BlogListProps {
-  initialPosts: IBlog[];
+  initialPosts: IPost[];
   total: number;
   tag?: string;
   search?: string;
@@ -17,7 +17,7 @@ export default function BlogList({
   tag,
   search,
 }: BlogListProps) {
-  const [posts, setPosts] = useState<IBlog[]>(initialPosts);
+  const [posts, setPosts] = useState<IPost[]>(initialPosts);
   const [page, setPage] = useState(2); // start from next page
   const [hasMore, setHasMore] = useState(initialPosts.length < total);
   const [loading, setLoading] = useState(false);
@@ -36,7 +36,7 @@ export default function BlogList({
 
     try {
       // append query tags
-      const url = new URL(`${apiUrl}/api/blog`);
+      const url = new URL(`${apiUrl}/api/posts`);
       if (tag && tag !== "all") url.searchParams.append("tag", tag);
       if (search) url.searchParams.append("search", search);
       url.searchParams.append("page", page.toString());

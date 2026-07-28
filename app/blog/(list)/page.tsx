@@ -13,7 +13,7 @@ async function getBlog(tag?: string, search?: string) {
   try {
     // api API URL with optional tag and search filters
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
-    const url = new URL(`${apiUrl}/api/blog`);
+    const url = new URL(`${apiUrl}/api/posts`);
     if (tag && tag !== "all") url.searchParams.append("tag", tag);
     if (search) url.searchParams.append("search", search);
     url.searchParams.append("page", "1");

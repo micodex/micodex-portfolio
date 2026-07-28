@@ -1,5 +1,6 @@
-import { IProject } from "@/models/project";
 import ProjectCard from "../ui/ProjectCard";
+import { IProject } from "@/models/project";
+import { CloudAlert } from "lucide-react";
 
 // Helper function to fetch projects
 async function getProjects(): Promise<IProject[]> {
@@ -54,9 +55,12 @@ export default async function ProjectSection() {
         </header>
 
         {projects.length === 0 ? (
-          <p className="col-span-full text-center text-gray-500 dark:text-gray-400 py-8">
-            No projects available at the moment.
-          </p>
+          <div className="py-10 text-gray-500 dark:text-gray-400">
+            <div className="flex flex-col gap-2 items-center">
+              <CloudAlert />
+              <p>هیچ پروژه‌ای پیدا نشد!</p>
+            </div>
+          </div>
         ) : (
           <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {/* Project cards */}

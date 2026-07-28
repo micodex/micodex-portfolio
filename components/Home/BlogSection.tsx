@@ -1,11 +1,12 @@
-import { IBlog } from "@/models/blog";
+import { IPost } from "@/models/post";
 import PostCard from "../ui/PostCard";
 import Link from "next/link";
+import { CloudAlert } from "lucide-react";
 
-async function getNewBlogs(): Promise<IBlog[]> {
+async function getNewBlogs(): Promise<IPost[]> {
   try {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
-    const res = await fetch(`${apiUrl}/api/blog?limit=4`, {
+    const res = await fetch(`${apiUrl}/api/posts?limit=4`, {
       next: { revalidate: 60 },
     }); // cach the results and refresh data every 60 seconds (ISR)
 
@@ -51,9 +52,12 @@ export default async function BlogSection() {
         </header>
 
         {newBlogs.length === 0 ? (
-          <p className="col-span-full text-center py-8 text-gray-500 dark:text-gray-400">
-            No blog posts available yet.
-          </p>
+          <div className="py-10 text-gray-500 dark:text-gray-400">
+            <div className="flex flex-col gap-2 items-center">
+              <CloudAlert />
+              <p>هیچ بلاگی پیدا نشد!</p>
+            </div>
+          </div>
         ) : (
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-6">
             {newBlogs.map((blog) => (

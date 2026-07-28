@@ -1,7 +1,6 @@
-// app/api/blog/route.ts
-import { NextResponse, NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import connectDB from "@/lib/mongodb";
-import Blog from "@/models/blog";
+import Post from "@/models/post";
 
 export async function GET(request: NextRequest) {
   await connectDB();
@@ -35,12 +34,12 @@ export async function GET(request: NextRequest) {
     console.log("MongoDB Query -> ", query);
 
     // get total count for pagination
-    const total = await Blog.countDocuments(query);
+    const total = await Post.countDocuments(query);
     console.log("total Documents -> ", total);
 
     // Fetch filtered blog posts, sorted by newest first
-    // TODO: fix sort
-    const blogPosts = await Blog.find(query)
+
+    const blogPosts = await Post.find(query)
       .sort({ _id: -1 })
       .skip((page - 1) * limit)
       .limit(limit);
@@ -50,7 +49,7 @@ export async function GET(request: NextRequest) {
     console.error(error);
     return NextResponse.json(
       { success: false, error: "server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
