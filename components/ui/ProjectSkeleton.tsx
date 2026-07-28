@@ -30,14 +30,14 @@ export default function ProjectSkeleton() {
       <div className="section-container py-20">
         <div className="p-4 pt-0 mb-8 flex justify-between border-b">
           <div className="">
-            <h2 className="text-2xl font-bold mb-2">Projects 📂</h2>
+            <h2 className="text-2xl font-bold mb-2">پروژه‌ها</h2>
             <h3 className="text-sm text-gray-600">
-              A showcase of my best projects
+              یک لیست از بهترین پروژه‌های من
             </h3>
           </div>
           <div>
             <a className="hover:text-sky-400" href="#">
-              All Projects →
+              همه پروژه‌ها ←
             </a>
           </div>
         </div>

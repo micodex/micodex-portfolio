@@ -1,7 +1,4 @@
-import "@/styles/custom.css";
-
 import { FaGithub } from "react-icons/fa";
-import { Download } from "lucide-react";
 
 import * as motion from "motion/react-client";
 
@@ -69,16 +66,6 @@ export default function HeroSection() {
                   <span>مشاهده گیت‌هاب ↗</span>
                 </motion.a>
               </div>
-
-              {/* Blur Background */}
-              <div
-                aria-hidden="true"
-                className="-z-1 absolute top-10 left-10 w-40 h-40 bg-pink-400 rounded-full blur-3xl opacity-10"
-              ></div>
-              <div
-                aria-hidden="true"
-                className="-z-1 absolute bottom-4 right-10 w-52 h-52 bg-blue-400 rounded-full blur-3xl  opacity-10"
-              ></div>
             </div>
 
             {/* social links and resume donwnload button */}
