@@ -19,7 +19,7 @@ async function getBlog(tag?: string, search?: string) {
     url.searchParams.append("page", "1");
     url.searchParams.append("limit", "6");
     const res = await fetch(url.toString(), {
-      cache: "no-store",
+      next: { revalidate: 60 },
     }); // TODO: use ISR for caching posts  next: { revalidate: 60 },
 
     if (!res.ok) throw new Error("Failed to fetch blog posts");

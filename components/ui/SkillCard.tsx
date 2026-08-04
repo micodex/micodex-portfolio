@@ -1,6 +1,5 @@
 import { colors } from "@/lib/data/skills";
 import type { Skill } from "@/types/skill";
-
 import * as motion from "motion/react-client";
 
 interface Props {
@@ -10,9 +9,10 @@ interface Props {
 export default function SkillCard({ skill }: Props) {
   return (
     <motion.div
-      initial={{ opacity: 0.05 }}
-      whileInView={{ opacity: 1, transition: { duration: 1.3 } }}
-      viewport={{ margin: "-90px" }}
+      initial={{ opacity: 0.08 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1.2, ease: "easeOut" }}
+      viewport={{ margin: "-50px" }}
     >
       <div
         dir="rtl"
@@ -52,13 +52,21 @@ export default function SkillCard({ skill }: Props) {
           aria-valuemax={100}
           aria-label={`${skill.title} proficiency`}
         >
-          <div
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{
+              width: skill.level,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeInOut",
+            }}
+            viewport={{ once: true }}
             className={`h-2`}
             style={{
               backgroundColor: colors[skill.color][500],
-              width: `${skill.level}`,
             }}
-          ></div>
+          ></motion.div>
         </div>
         <div className="flex justify-between mt-2 text-xs text-gray-500">
           <span
@@ -69,17 +77,17 @@ export default function SkillCard({ skill }: Props) {
             {parseInt(skill.level) > 80
               ? "پیشرفته"
               : parseInt(skill.level) > 50
-              ? "متوسط"
-              : "مقدماتی"}
+                ? "متوسط"
+                : "مقدماتی"}
           </span>
           <span>{skill.level}</span>
         </div>
         {/* dot background */}
-        <div
+        {/* <div
           className="absolute inset-0 h-full w-full opacity-40
         bg-[radial-gradient(circle,#73737350_1px,transparent_1px)]
         bg-[size:18px_18px] -z-1"
-        ></div>
+        ></div> */}
       </div>
     </motion.div>
   );

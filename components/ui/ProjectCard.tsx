@@ -1,16 +1,22 @@
+import Link from "next/link";
 import Image from "next/image";
 import Tag from "@/components/ui/Tag";
 import { FaGithub } from "react-icons/fa";
 import { IProject } from "@/models/project";
 import * as motion from "motion/react-client";
-import Link from "next/link";
 import { Link as LinkIcon } from "lucide-react";
 
 export default function ProjectCard({ project }: { project: IProject }) {
   return (
     <motion.div
-      initial={{ opacity: 0.05, y: 20 }}
-      whileInView={{ opacity: 1, y: 0, transition: { duration: 1.3 } }}
+      initial={{ opacity: 0.08, y: 40, rotateX: 30 }}
+      whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+      transition={{
+        opacity: { duration: 2, ease: "easeOut" },
+        y: { duration: 1, ease: "easeOut" },
+        rotateX: { duration: 0.8, ease: "easeOut" },
+      }}
+      viewport={{ once: true, margin: "-80px" }}
     >
       <article className="p-4 bg-white dark:bg-gray-900 shadow-2xl shadow-slate-200/50 dark:shadow-none hover:shadow-sm transition-shadow duration-100 ring-2 ring-gray-100  dark:ring-gray-800 rounded-md overflow-hidden">
         {/* card image */}
