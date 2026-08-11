@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { IPost } from "@/models/post";
+
 import PostCard from "@/components/ui/PostCard";
+import { CloudAlert } from "lucide-react";
 
 interface BlogListProps {
   initialPosts: IPost[];
@@ -63,13 +65,21 @@ export default function BlogList({
       <h2 id="blog-grid-heading" className="sr-only">
         Blog Posts
       </h2>
-
       {/* posts grid */}
-      <div className="grid lg:grid-cols-2 grid-cols-1 gap-6">
-        {posts.map((blog) => (
-          <PostCard key={String(blog._id)} blog={blog} />
-        ))}
-      </div>
+      {posts.length == 0 ? (
+        <div className="py-16 text-gray-500 dark:text-gray-400 border rounded-xl">
+          <div className="flex flex-col gap-4 items-center">
+            <CloudAlert size={30} />
+            <p className="text-lg">هیچ بلاگی پیدا نشد!</p>
+          </div>
+        </div>
+      ) : (
+        <div className="grid lg:grid-cols-2 grid-cols-1 gap-6">
+          {posts.map((blog) => (
+            <PostCard key={String(blog._id)} blog={blog} />
+          ))}
+        </div>
+      )}
 
       {/* loadmore button */}
       {hasMore && (
