@@ -9,10 +9,10 @@ interface Props {
 export default function SkillCard({ skill }: Props) {
   return (
     <motion.div
-      initial={{ opacity: 0.08 }}
+      initial={{ opacity: 0.02 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.2, ease: "easeOut" }}
-      viewport={{ margin: "-50px" }}
+      viewport={{ margin: "-70px" }}
     >
       <div
         dir="rtl"
@@ -82,12 +82,6 @@ export default function SkillCard({ skill }: Props) {
           </span>
           <span>{skill.level}</span>
         </div>
-        {/* dot background */}
-        {/* <div
-          className="absolute inset-0 h-full w-full opacity-40
-        bg-[radial-gradient(circle,#73737350_1px,transparent_1px)]
-        bg-[size:18px_18px] -z-1"
-        ></div> */}
       </div>
     </motion.div>
   );

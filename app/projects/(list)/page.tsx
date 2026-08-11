@@ -1,6 +1,7 @@
 import ProjectCard from "@/components/ui/ProjectCard";
 import Tag from "@/components/ui/Tag";
 import { IProject } from "@/models/project";
+import { CloudAlert } from "lucide-react";
 
 // Metadata
 import type { Metadata } from "next";
@@ -27,6 +28,7 @@ async function getProjects(): Promise<IProject[]> {
 }
 
 export default async function projectsPage() {
+  // await new Promise((resolve) => setTimeout(resolve, 5000));
   const projects = await getProjects();
   const allTags = ["Next.js", "React", "TypeScript", "Front-End", "Full-Stack"];
 
@@ -53,13 +55,6 @@ export default async function projectsPage() {
             </p>
           </div>
         </div>
-
-        {/* dotted background */}
-        {/* <div
-          className="absolute inset-0 h-full w-full opacity-80
-          bg-[radial-gradient(circle,#73737350_1px,transparent_1px)] 
-          bg-[size:5px_5px]"
-        ></div> */}
       </header>
 
       <nav className="section-container" aria-label="Blog Post Filters">
@@ -104,12 +99,21 @@ export default async function projectsPage() {
               Not my actual projects. work in progress.
             </p>
           </header> */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Project cards */}
-            {projects.map((project) => (
-              <ProjectCard key={String(project._id)} project={project} />
-            ))}
-          </div>
+          {projects.length == 0 ? (
+            <div className="py-16 text-gray-500 dark:text-gray-400 border rounded-xl">
+              <div className="flex flex-col gap-4 items-center">
+                <CloudAlert size={30} />
+                <p className="text-lg">هیچ پروژه‌ای پیدا نشد!</p>
+              </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              {/* Project cards */}
+              {projects.map((project) => (
+                <ProjectCard key={String(project._id)} project={project} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </div>

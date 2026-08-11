@@ -11,14 +11,12 @@ import Tag from "@/components/ui/Tag";
 export default function PostCard({ blog }: { blog: IPost }) {
   return (
     <motion.div
-      initial={{ opacity: 0.08, y: 40, rotateX: 30 }}
-      whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+      initial={{ opacity: 0.02 }}
+      whileInView={{ opacity: 1 }}
       transition={{
-        opacity: { duration: 2, ease: "easeOut" },
-        y: { duration: 1, ease: "easeOut" },
-        rotateX: { duration: 0.8, ease: "easeOut" },
+        opacity: { duration: 1.2, ease: "easeOut" },
       }}
-      viewport={{ once: true, margin: "-50px" }}
+      viewport={{ once: false, margin: "-50px" }}
     >
       <article className="p-4 flex gap-4 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-lg hover:shadow-sm shadow-gray-100 dark:shadow-none transition-shadow duration-100">
         {/* post image*/}

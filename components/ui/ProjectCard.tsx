@@ -9,14 +9,12 @@ import { Link as LinkIcon } from "lucide-react";
 export default function ProjectCard({ project }: { project: IProject }) {
   return (
     <motion.div
-      initial={{ opacity: 0.08, y: 40, rotateX: 30 }}
-      whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+      initial={{ opacity: 0.0 }}
+      whileInView={{ opacity: 1 }}
       transition={{
-        opacity: { duration: 2, ease: "easeOut" },
-        y: { duration: 1, ease: "easeOut" },
-        rotateX: { duration: 0.8, ease: "easeOut" },
+        opacity: { duration: 1.2, ease: "easeOut" },
       }}
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: false, margin: "-110px" }}
     >
       <article className="p-4 bg-white dark:bg-gray-900 shadow-2xl shadow-slate-200/50 dark:shadow-none hover:shadow-sm transition-shadow duration-100 ring-2 ring-gray-100  dark:ring-gray-800 rounded-md overflow-hidden">
         {/* card image */}
