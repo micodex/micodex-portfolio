@@ -1,12 +1,14 @@
 import { colors } from "@/lib/data/skills";
-import type { Skill } from "@/types/skill";
 import * as motion from "motion/react-client";
+import { CgArrowTopLeft } from "react-icons/cg";
+import type { Skill } from "@/types/skill";
 
 interface Props {
   skill: Skill;
+  onDetailsClick: (skill: Skill) => void;
 }
 
-export default function SkillCard({ skill }: Props) {
+export default function SkillCard({ skill, onDetailsClick }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0.02 }}
@@ -16,16 +18,16 @@ export default function SkillCard({ skill }: Props) {
     >
       <div
         dir="rtl"
-        className="relative z-0
+        className="relative
           p-6 rounded-lg bg-white dark:bg-gradient-to-br dark:bg-gray-900 ring
         ring-gray-200 dark:ring-gray-800 shadow-2xl
           shadow-slate-200/50 dark:shadow-none hover:ring-4 transition-all duration-75
         "
       >
-        <div className="flex items-center mb-4 ">
+        <div className="flex items-center mb-4">
           <div
             className={
-              "w-12 h-12 text-2xl bg-orange-50 text-orange-500 rounded-full flex items-center justify-center me-3"
+              "w-12 h-12 shadow-lg shadow-slate-200 dark:shadow-none text-2xl bg-orange-50 text-orange-500 rounded-full flex items-center justify-center me-3"
             }
             style={{
               backgroundColor: colors[skill.color][50],
@@ -40,9 +42,21 @@ export default function SkillCard({ skill }: Props) {
             {skill.title}
           </h4>
         </div>
-        <p className="line-clamp-3 text-gray-600 dark:text-gray-400 text-sm mb-6">
+        <div className="line-clamp-3 text-gray-600 dark:text-gray-400 text-sm mb-2">
           {skill.description}
-        </p>
+        </div>
+        <button
+          type="button"
+          onClick={() => onDetailsClick(skill)}
+          className="
+            text-xs font-medium text-sky-600
+            hover:text-sky-900 dark:text-sky-400
+            dark:hover:text-sky-300 transition-colors
+            cursor-pointer mb-5
+          "
+        >
+          مشاهده کامل توضیحات <CgArrowTopLeft className="inline" />
+        </button>
         {/* --- progress bar */}
         <div
           className="w-full bg-gray-200 dark:bg-gray-800 border-1 rounded-full overflow-hidden"

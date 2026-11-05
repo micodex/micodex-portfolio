@@ -26,12 +26,12 @@ export default function PostCard({ blog }: { blog: IPost }) {
               src={blog.src}
               fill={true}
               alt={`تصویر کاور برای پست: ${blog.title}`}
-              className="object-cover group-hover:scale-104 transition-transform duration-500"
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
             />
             {/* overlay */}
-            <div className="opacity-0 hover:opacity-100 transition-opacity duration-200 ease-out absolute inset-0 flex items-center justify-center bg-sky-200/20 cursor-pointer">
+            {/* <div className="opacity-0 hover:opacity-100 transition-opacity duration-200 ease-out absolute inset-0 flex items-center justify-center bg-sky-200/20 cursor-pointer">
               <LinkIcon size={40} className="text-sky-300" />
-            </div>
+            </div> */}
           </Link>
         </div>
         {/* post content */}

@@ -5,10 +5,14 @@ import { motion } from "motion/react";
 // skill card
 import SkillCard from "../ui/SkillCard";
 // Data
-import { skills } from "@/lib/data/skills";
+import { colors, skills } from "@/lib/data/skills";
+import Dialog from "../ui/Dialog";
+
+import { Skill } from "@/types/skill";
 
 export default function SkillSection() {
   const [activeFilter, setActiveFilter] = useState<string>("All Skills");
+  const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
 
   // filter skills based on type ( front-end / back-end / All Skills)
   const filteredSkills =
@@ -27,7 +31,7 @@ export default function SkillSection() {
     <section
       id="skills"
       aria-labelledby="skill-heading"
-      className="bg-gray-50 dark:bg-gray-950 py-20"
+      className="bg-gray-50 dark:bg-gray-950 py-20 relative"
     >
       <div className="section-container">
         {/* skill header */}
@@ -63,12 +67,63 @@ export default function SkillSection() {
         </div>
 
         {/* render the filterd skills */}
-        <div dir="ltr" className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div
+          dir="ltr"
+          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        >
           {filteredSkills.map((skill) => (
-            <SkillCard key={skill.id} skill={skill} />
+            <SkillCard
+              key={skill.id}
+              skill={skill}
+              onDetailsClick={setSelectedSkill}
+            />
           ))}
         </div>
       </div>
+
+      <Dialog
+        isOpen={selectedSkill !== null}
+        onClose={() => setSelectedSkill(null)}
+      >
+        {selectedSkill && (
+          <div dir="rtl" className="space-y-5">
+            {/* header */}
+            <div className="flex items-center gap-3">
+              <div
+                className="w-14 h-14 rounded-full
+                  flex items-center justify-center text-2xl"
+                style={{
+                  backgroundColor: colors[selectedSkill.color][50],
+                  color: colors[selectedSkill.color][500],
+                }}
+              >
+                {selectedSkill.icon}
+              </div>
+
+              <div>
+                <p
+                  className="font-semibold text-gray-800
+                  dark:text-gray-200 text-xl"
+                >
+                  {selectedSkill.title}
+                </p>
+
+                <p className="text-xs text-gray-500 mt-1">
+                  {selectedSkill.type}
+                </p>
+              </div>
+            </div>
+
+            {/* Full Description */}
+            <div
+              className="text-sm leading-8 text-gray-600
+                dark:text-gray-300 "
+            >
+              {selectedSkill.description}
+            </div>
+          </div>
+        )}
+      </Dialog>
     </section>
   );
 }

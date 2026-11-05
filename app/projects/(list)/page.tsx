@@ -16,7 +16,7 @@ async function getProjects(): Promise<IProject[]> {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
     const res = await fetch(`${apiUrl}/api/projects`, {
       next: { revalidate: 60 },
-    }); // cach the results and refresh data every 60 seconds (ISR)
+    }); // cache the results and refresh data every 60 seconds (ISR)
 
     if (!res.ok) throw new Error("Failed to fetch projects");
     const data = await res.json();
@@ -64,7 +64,7 @@ export default async function projectsPage() {
         <div className="lg:flex justify-between px-4 py-4 border rounded-xl">
           <div className="content-center flex flex-wrap gap-3 mb-4 lg:mb-0">
             {allTags.map((tag) => (
-              <button key={tag}>
+              <button className="cursor-pointer" key={tag}>
                 <Tag tag={tag} />
               </button>
             ))}
@@ -88,17 +88,6 @@ export default async function projectsPage() {
       <section ria-labelledby="projects-heading">
         <div className="section-container py-20">
           {/* TODO: add header */}
-          {/* <header className="px-4 mb-8">
-            <h2
-              id="projects-heading"
-              className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-2"
-            >
-              My Projects
-            </h2>
-            <p className="text-gray-600 dark:text-gray-400">
-              Not my actual projects. work in progress.
-            </p>
-          </header> */}
           {projects.length == 0 ? (
             <div className="py-16 text-gray-500 dark:text-gray-400 border rounded-xl">
               <div className="flex flex-col gap-4 items-center">

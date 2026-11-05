@@ -24,26 +24,51 @@ export default function HeroSection() {
         <div className="lg:flex gap-10 pb-20 pt-40">
           <div className="flex flex-col">
             {/* ABOUT ME card */}
-            <div className="relative z-1 px-6 py-8 rounded-xl bg-sky-100/30 dark:bg-gray-800/20 border-2 dark:border-gray-800 border-sky-200">
+            <div className="relative z-1 px-6 py-8 rounded-xl bg-sky-100/30 dark:bg-gray-800/20 border-4 dark:border-gray-800 border-sky-200">
               <motion.h1
-                initial={{ x: -20 }}
+                initial={{ x: -40 }}
                 animate={{ x: 0, transition: { duration: 3, type: "spring" } }}
                 className="text-3xl sm:text-5xl font-bold text-gray-800 dark:text-gray-200"
               >
-                سلام <span aria-hidden="true">👋</span> میلاد هستم
+                سلام{" "}
+                <motion.span
+                  role="img"
+                  aria-label="Hello and welcome"
+                  style={{
+                    display: "inline-block",
+                    fontSize: "3rem",
+                    cursor: "pointer",
+                    // Anchors the pivot point to the bottom-right/wrist area
+                    transformOrigin: "70% 70%",
+                  }}
+                  animate={{
+                    rotate: [0, 20, -10, 20, 0],
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: 1,
+                    delay: 1,
+                    ease: "easeInOut",
+                    repeatDelay: 0.5,
+                  }}
+                >
+                  👋
+                </motion.span>{" "}
+                میلاد هستم
               </motion.h1>
               <motion.h2
                 initial={{ x: -20 }}
                 animate={{ x: 0, transition: { duration: 4, type: "spring" } }}
-                className="mt-2 inline-block text-xl sm:text-2xl font-normal bg-gradient-to-r from-indigo-400 to-sky-400 bg-clip-text text-transparent"
+                className="mt-2 inline-block text-xl sm:text-2xl font-normal text-gray-600 dark:text-gray-400"
               >
-                یک توسعه دهنده وب
+                توسعه دهنده وب
               </motion.h2>
               <p className="mt-6 text-md text-gray-700 dark:text-gray-400 max-w-150">
-                برنامه‌نویس خودآموز فرانت‌اند با تمرکز بر React و Next.js.
-                علاقه‌ من ساخت رابط‌ کاربری مدرن و سریع، داشبورد‌های تعاملی،
-                ادغام هوش مصنوعی، اتوماسیون و نوشتن کد تمیز است. همچنین تجربه
-                کار کردن با Express رو هم دارم.
+                من یک توسعه‌دهنده وب خودآموز هستم که به ساخت اپلیکیشن‌های وب
+                مدرن، واکنش‌گرا و کاربرپسند علاقه دارم. تمرکز اصلی من بر
+                TypeScript، React و Next.js است و در کنار آن، مهارت‌هایم را در
+                زمینه توسعه فول‌استک و فناوری‌های بک‌اند و اوتوماسیون هوش‌مصنوعی
+                برای کسب و کار ها، گسترش می‌دهم.
               </p>
 
               {/* -- CTA button */}

@@ -16,7 +16,8 @@ type ColorKey =
   | "pink"
   | "slate"
   | "violet"
-  | "teal";
+  | "teal"
+  | "rose";
 type ColorShades = {
   50: string;
   500: string;
@@ -31,6 +32,6 @@ export interface Skill {
   // color: keyof typeof colors;
   color: ColorKey;
   title: string;
-  description: string;
+  description: ReactNode;
   level: string;
 }

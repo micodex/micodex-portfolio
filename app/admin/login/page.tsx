@@ -5,7 +5,6 @@ import { useState } from "react";
 
 import { Lock } from "lucide-react";
 import { User } from "lucide-react";
-import { Sparkle } from "lucide-react";
 
 export default function LoginPage() {
   const [password, setPassword] = useState("");
@@ -41,10 +40,8 @@ export default function LoginPage() {
         <form
           action=""
           onSubmit={handleSubmit}
-          className="p-6 w-md max-w-md rounded-xl bg-whitedark:bg-neutral-900 shadow-xl shadow-slate-200 border-2 border-gray-200 dark:border-stone-900 dark:shadow-none"
+          className="p-6 w-md max-w-md rounded-xl bg-white dark:bg-neutral-900 shadow-xl shadow-slate-200 border-2 border-gray-200 dark:border-stone-900 dark:shadow-none"
         >
-          {/* logo */}
-          <Sparkle className="text-sky-500 text-center animate-pulse" />
           <h1 className="text-2xl text-center font-bold">ورود به پنل </h1>
           <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm text-center">
             لطفا نام کاربری و کلمه عبور را وارد کنید
@@ -90,7 +87,10 @@ export default function LoginPage() {
             <Lock className="absolute w-4 h-4 top-3.5 right-3 text-gray-500" />
           </div>
           <div className="mt-12">
-            <button type="submit" className="btn-primary rounded-xl w-full">
+            <button
+              type="submit"
+              className="btn-primary dark:bg-blue-700 rounded-xl w-full"
+            >
               ورود
             </button>
           </div>

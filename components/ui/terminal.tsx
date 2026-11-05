@@ -106,7 +106,7 @@ export const TypingAnimation = ({
       motion.create(Component, {
         forwardMotionProps: true,
       }),
-    [Component]
+    [Component],
   );
 
   const [displayedText, setDisplayedText] = useState<string>("");
@@ -208,7 +208,7 @@ export const Terminal = ({
     return {
       completeItem: (index: number) => {
         setActiveIndex((current) =>
-          index === current ? current + 1 : current
+          index === current ? current + 1 : current,
         );
       },
       activeIndex,
@@ -230,8 +230,8 @@ export const Terminal = ({
     <div
       ref={containerRef}
       className={cn(
-        "border-border bg-background z-0 h-full max-h-[400px] w-full max-w-lg rounded-xl border-2",
-        className
+        "border-sky-200 dark:border-gray-700 bg-background z-0 h-full max-h-[400px] w-full max-w-lg rounded-xl border-4",
+        className,
       )}
     >
       <div className="border-border flex flex-col gap-y-2 border-b p-4">

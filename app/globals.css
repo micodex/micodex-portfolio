@@ -193,4 +193,51 @@
       bg-[radial-gradient(circle,#73737350_1px,transparent_1px)] 
       bg-[size:30px_30px];
   }
+
+  /* Dialog Opening Animation */
+
+  .skill-dialog {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+
+    transition:
+      opacity 300ms ease,
+      transform 300ms ease,
+      display 300ms allow-discrete;
+  }
+
+  /* Initial state when opening */
+  @starting-style {
+    .skill-dialog[open] {
+      opacity: 0;
+      transform: scale(0.97) translateY(10px);
+    }
+  }
+
+  /*  Dialog Backdrop */
+  .skill-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.1);
+
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+
+  /* Initial backdrop state when opening */
+  @starting-style {
+    .skill-dialog[open]::backdrop {
+      background: transparent;
+
+      -webkit-backdrop-filter: blur(0);
+      backdrop-filter: blur(0);
+    }
+  }
+
+  /* Reduced Motion*/
+
+  @media (prefers-reduced-motion: reduce) {
+    .skill-dialog,
+    .skill-dialog::backdrop {
+      transition: none;
+    }
+  }
 }

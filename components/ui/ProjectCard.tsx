@@ -4,7 +4,6 @@ import Tag from "@/components/ui/Tag";
 import { FaGithub } from "react-icons/fa";
 import { IProject } from "@/models/project";
 import * as motion from "motion/react-client";
-import { Link as LinkIcon } from "lucide-react";
 
 export default function ProjectCard({ project }: { project: IProject }) {
   return (
@@ -16,7 +15,7 @@ export default function ProjectCard({ project }: { project: IProject }) {
       }}
       viewport={{ once: false, margin: "-110px" }}
     >
-      <article className="p-4 bg-white dark:bg-gray-900 shadow-2xl shadow-slate-200/50 dark:shadow-none hover:shadow-sm transition-shadow duration-100 ring-2 ring-gray-100  dark:ring-gray-800 rounded-md overflow-hidden">
+      <article className="p-4 bg-white dark:bg-gray-900 shadow-2xl shadow-slate-200/50 dark:shadow-none hover:shadow-sm transition-shadow duration-100 ring-2 ring-gray-100  dark:ring-gray-800 rounded-lg overflow-hidden">
         {/* card image */}
         <div className="group relative w-full aspect-4/3 rounded-sm overflow-hidden dark:brightness-95">
           <Link href={`/projects/${project._id}`}>
@@ -28,7 +27,7 @@ export default function ProjectCard({ project }: { project: IProject }) {
             ></Image>
             {/* overlay */}
             <div className="opacity-0 hover:opacity-100 transition-opacity duration-200 ease-out absolute inset-0 flex items-center justify-center bg-sky-200/20">
-              <LinkIcon size={40} className="text-sky-300" />
+              <span className="text-sky-800 text-lg ">جزئیات بیشتر</span>
             </div>
           </Link>
         </div>
