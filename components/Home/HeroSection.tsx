@@ -46,7 +46,7 @@ export default function HeroSection() {
                   }}
                   transition={{
                     duration: 1.5,
-                    repeat: 1,
+                    repeat: 0,
                     delay: 1,
                     ease: "easeInOut",
                     repeatDelay: 0.5,

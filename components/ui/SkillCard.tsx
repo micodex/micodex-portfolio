@@ -11,10 +11,14 @@ interface Props {
 export default function SkillCard({ skill, onDetailsClick }: Props) {
   return (
     <motion.div
-      initial={{ opacity: 0.02 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 1.2, ease: "easeOut" }}
-      viewport={{ margin: "-70px" }}
+      initial={{ opacity: 0.2, y: 30, scale: 0.96 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{
+        opacity: { duration: 0.6, ease: "easeOut" },
+        scale: { duration: 0.7, ease: "easeOut" },
+        y: { duration: 0.8, ease: "circOut" },
+      }}
+      viewport={{ margin: "-90px", once: true }}
     >
       <div
         dir="rtl"
@@ -42,7 +46,7 @@ export default function SkillCard({ skill, onDetailsClick }: Props) {
             {skill.title}
           </h4>
         </div>
-        <div className="line-clamp-3 text-gray-600 dark:text-gray-400 text-sm mb-2">
+        <div className="line-clamp-3 text-gray-600 dark:text-gray-400 text-sm">
           {skill.description}
         </div>
         <button

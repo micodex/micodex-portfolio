@@ -8,12 +8,14 @@ import * as motion from "motion/react-client";
 export default function ProjectCard({ project }: { project: IProject }) {
   return (
     <motion.div
-      initial={{ opacity: 0.0 }}
-      whileInView={{ opacity: 1 }}
+      initial={{ opacity: 0.2, y: 40, scale: 0.96 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
       transition={{
-        opacity: { duration: 1.2, ease: "easeOut" },
+        opacity: { duration: 0.8, ease: "easeOut" },
+        scale: { duration: 0.7, ease: "easeOut" },
+        y: { duration: 0.6, ease: "circOut" },
       }}
-      viewport={{ once: false, margin: "-110px" }}
+      viewport={{ once: true, margin: "-110px" }}
     >
       <article className="p-4 bg-white dark:bg-gray-900 shadow-2xl shadow-slate-200/50 dark:shadow-none hover:shadow-sm transition-shadow duration-100 ring-2 ring-gray-100  dark:ring-gray-800 rounded-lg overflow-hidden">
         {/* card image */}

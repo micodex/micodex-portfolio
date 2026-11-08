@@ -11,12 +11,13 @@ import Tag from "@/components/ui/Tag";
 export default function PostCard({ blog }: { blog: IPost }) {
   return (
     <motion.div
-      initial={{ opacity: 0.02 }}
-      whileInView={{ opacity: 1 }}
+      initial={{ opacity: 0.2, x: 20 }}
+      whileInView={{ opacity: 1, x: 0 }}
       transition={{
-        opacity: { duration: 1.2, ease: "easeOut" },
+        opacity: { duration: 0.8, ease: "easeOut" },
+        x: { duration: 1, ease: "backOut" },
       }}
-      viewport={{ once: false, margin: "-50px" }}
+      viewport={{ once: true, margin: "-70px" }}
     >
       <article className="p-4 flex gap-4 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-lg hover:shadow-sm shadow-gray-100 dark:shadow-none transition-shadow duration-100">
         {/* post image*/}
@@ -28,15 +29,11 @@ export default function PostCard({ blog }: { blog: IPost }) {
               alt={`تصویر کاور برای پست: ${blog.title}`}
               className="object-cover group-hover:scale-105 transition-transform duration-500"
             />
-            {/* overlay */}
-            {/* <div className="opacity-0 hover:opacity-100 transition-opacity duration-200 ease-out absolute inset-0 flex items-center justify-center bg-sky-200/20 cursor-pointer">
-              <LinkIcon size={40} className="text-sky-300" />
-            </div> */}
           </Link>
         </div>
         {/* post content */}
         <div className="flex flex-col space-y-3">
-          <h3 className="font-bold text-md  text-gray-800 dark:text-gray-200 hover:text-sky-500 dark:hover:text-sky-400 hover:cursor-pointer transition-colors">
+          <h3 className="font-bold text-md text-gray-800 dark:text-gray-200 hover:text-sky-500 dark:hover:text-sky-400 hover:cursor-pointer transition-colors">
             <a href={`/blog/${blog._id}`}>{blog.title}</a>
           </h3>
           <p className="line-clamp-3 text-gray-600 dark:text-gray-400 text-xs sm:text-sm">

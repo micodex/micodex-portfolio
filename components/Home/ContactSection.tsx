@@ -8,26 +8,29 @@ export default function ContactSection() {
       className="py-10 bg-gray-50 dark:bg-gray-950"
     >
       <div className="section-container">
-        <div className="animated-background py-20 px-4 rounded-lg bg-linear-to-r/oklab from-indigo-300 to-teal-300">
+        <div className="animated-background py-20 px-4 rounded-4xl bg-linear-to-b/oklch from-gray-50 to-indigo-200 dark:from-sky-800 dark:to-gray-950">
           <div className="text-center">
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
-              viewport={{ amount: 0.5 }}
+              initial={{ opacity: 0.2, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ amount: 0.5, once: true }}
             >
-              <span className="block text-4xl">🎉</span>
+              <span role="img" className="block text-4xl">
+                🎉
+              </span>
               <h2
                 id="contact-heading"
-                className="mt-4 font-bold text-2xl sm:text-3xl text-sky-950"
+                className="mt-3 font-bold text-2xl sm:text-4xl text-sky-950 dark:text-gray-200"
               >
                 آماده همکاری هستم
               </h2>
 
-              <p className="mt-1 text-gray-800">
+              <p className="mt-4 text-gray-800 dark:text-gray-300">
                 اگه پروژه‌ای داری که نیاز به توسعه داره، بیا در موردش صحبت کنیم.
               </p>
               <div className="mt-6 block">
-                <Link className="btn-primary" href="./contact">
+                <Link className="btn-primary rounded-full" href="./contact">
                   تماس با من
                 </Link>
               </div>

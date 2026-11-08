@@ -159,21 +159,21 @@
       focus:ring-4 focus:border-sky-400 dark:focus:border-sky-600 focus:ring-sky-100 dark:focus:ring-gray-800;
   }
   .animated-background {
-    background-size: 400%;
+    background-size: 100% 400%;
 
-    -webkit-animation: animation 5s ease infinite;
-    -moz-animation: animation 5s ease infinite;
-    animation: animation 5s ease infinite;
+    -webkit-animation: animation 10s ease infinite;
+    -moz-animation: animation 10s ease infinite;
+    animation: animation 10s ease infinite;
   }
 
   @keyframes animation {
     0%,
     100% {
-      background-position: 0% 50%;
+      background-position: 0% 0%;
     }
 
     50% {
-      background-position: 100% 50%;
+      background-position: 0% 100%;
     }
   }
 
@@ -202,8 +202,8 @@
 
     transition:
       opacity 300ms ease,
-      transform 300ms ease,
-      display 300ms allow-discrete;
+      transform 300ms ease;
+    /* display 300ms allow-discrete; */
   }
 
   /* Initial state when opening */
@@ -220,16 +220,6 @@
 
     -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
-  }
-
-  /* Initial backdrop state when opening */
-  @starting-style {
-    .skill-dialog[open]::backdrop {
-      background: transparent;
-
-      -webkit-backdrop-filter: blur(0);
-      backdrop-filter: blur(0);
-    }
   }
 
   /* Reduced Motion*/
